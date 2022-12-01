@@ -1,3 +1,92 @@
 /* Root */
 
 /* Universal Selector */
+* {
+    /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+  
+header {
+    display: flex;
+    padding: 1%;
+    background-color: #5f86aa;
+    color: #fff;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+h1 {
+    font-size: 200%;
+}
+  
+nav ul {
+    display: flex;
+    min-width: 180px;
+    list-style: none;
+    justify-content: space-between;
+}
+  
+nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    flex: 1 1 0;
+    margin: 2% auto;
+    width: 95%;
+    justify-content: space-between;
+}
+
+.filter {
+    display: flex;
+    flex-direction: row;
+}
+
+.content{
+    flex: 1 0 0;
+    flex-direction: row;
+    text-align: center;
+}
+
+aside {
+    
+}
+
+.map{
+    flex: 1 0 0;
+    flex-direction: row;
+    padding: 40px;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.temp{
+    text-align: center;
+}
+
+  
+footer {
+    display: flex;
+    padding: 2%;
+    background-color: #5f86aa;
+    color: #fff;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+      flex-direction: column;
+      text-align: center;
+    }
+    main {
+        flex-direction: column;
+    }
+  }
