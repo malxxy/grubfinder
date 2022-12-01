@@ -1,9 +1,9 @@
 /* Root */
 
 /* Universal Selector */
-* {
+/* * {
     /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-}
+/* } */
 
 body {
     display: flex;
@@ -55,9 +55,36 @@ main {
     text-align: center;
 }
 
-aside {
-    
+.container {
+    display:block;
 }
+
+.home {
+    position: relative;
+}
+
+.home-video {
+    position:relative;
+    z-index:0;
+    overflow: hidden;
+}
+
+.home-text {
+    position:absolute;
+    top:10%;
+    left:40%;
+    z-index:1;
+    text-align:center;
+    background-color: white;
+    opacity: 70%;
+    border-radius: 20px;
+    padding: 10px;
+    width: 35%;
+}
+
+/* aside {
+    // temp
+} */
 
 .map{
     flex: 1 0 0;
