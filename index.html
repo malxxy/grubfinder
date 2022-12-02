@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- MetaData -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,17 +15,19 @@
     <!-- Link materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="./assets/style.css">
+
     <title>Food Finds</title>
 </head>
+
 <body>
     <header>
-        <h1>Find a Restaurant Near You</h1>
+        <h1>GRUBFINDER</h1>
         <nav>
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Three</a></li>
-            <li><a href="#">Four</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
         </nav>
     </header>
@@ -32,17 +35,18 @@
     <main class="container">
         <section class="home container-lg col s12">
             <div class="home-text">
-                <h2>Find restaurants you can eat at.</h2>
-                <p>Search restaurants by location, cuisine, and dietary preferences.</p>
-                <button id="start-btn">Let's go</button>
+                <h2>Looking to Grub?</h2>
+                <h3>Search restaurants by location, cuisine, and dietary preferences.</h3>
+                <button id="start-btn">Find A Restaurant</button>
             </div>
             
             <div>
-                <video src="./assets/homeVid.mp4" id="home-video" autoplay loop muted type="video/mp4"></video>
+                <video w src="./assets/homeVid.mp4" id="home-video" autoplay loop muted type="video/mp4"></video>
             </div>
         </section>
 
         <section class="content">
+
             <section class="filter">
                 <h2>Restaurants:</h2>
                 <nav >
@@ -54,9 +58,11 @@
                     </ul> 
                 </nav>
             </section>
+
             <section class="hidden">
                 <!-- [restaurant list] -->
             </section>
+
         </section>
         <aside>
             <div class="map">
@@ -68,6 +74,7 @@
     <footer>
         <span>Thanks for visiting!</span>
     </footer>
+
     <!--JavaScript jQuery-->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

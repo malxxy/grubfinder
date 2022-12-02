@@ -1,22 +1,25 @@
-/* Root */
+/* Root
 
 /* Universal Selector */
-/* * {
-    /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-/* } */
+* {
+     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
 
 body {
     display: flex;
     flex-direction: column;
+    background-color: black;
 }
   
 header {
     display: flex;
     padding: 1%;
-    background-color: #5f86aa;
+    background-color: #30699f;
     color: #fff;
     justify-content: space-between;
     align-items: center;
+    border-radius: 15px;
+
 }
   
 h1 {
@@ -32,8 +35,15 @@ nav ul {
   
 nav a {
     color: white;
+    font-size: 18px;
     font-weight: bold;
     text-decoration: none;
+    position: relative;
+    margin: 10px 20px;
+}
+
+nav a {
+
 }
 
 main {
@@ -47,6 +57,7 @@ main {
 .filter {
     display: flex;
     flex-direction: row;
+    color: #fff;
 }
 
 .content{
@@ -63,28 +74,69 @@ main {
     position: relative;
 }
 
+video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
 .home-video {
     position:relative;
     z-index:0;
     overflow: hidden;
+    height: 400px;
+    width: 400px;
 }
 
 .home-text {
     position:absolute;
+    margin-left: auto;
+    margin-right: auto;
     top:10%;
-    left:40%;
-    z-index:1;
+    left: 0;
+    right: 0;
+    z-index: 1;
     text-align:center;
     background-color: white;
     opacity: 70%;
     border-radius: 20px;
     padding: 10px;
     width: 35%;
+
 }
 
 /* aside {
     // temp
 } */
+
+
+
+.temp{
+    text-align: center;
+    color: white;
+}
+
+#start-btn {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    color: black;
+    border-radius: 15px;
+    box-shadow: 0 4px #999;
+}
+
+#start-btn:hover {
+    color: goldenrod;
+    transition: all .7s ;
+    
+}
+
+#start-btn:active {
+    background-color: #5f86aa;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px) .3s;
+}
 
 .map{
     flex: 1 0 0;
@@ -93,19 +145,18 @@ main {
     text-align: center;
     border-style: solid;
     border-width: 1px;
+    border-radius: 15px;
+    border: white solid;
+    
 }
 
-.temp{
-    text-align: center;
-}
-
-  
 footer {
     display: flex;
     padding: 2%;
-    background-color: #5f86aa;
+    background-color: #30699f;
     color: #fff;
     justify-content: center;
+    border-radius: 15px;
 }
 
 @media screen and (max-width: 768px) {
