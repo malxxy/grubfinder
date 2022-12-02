@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- MetaData -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,39 +15,19 @@
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <!-- materialize (dropdown) css link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link rel="stylesheet" href="./assets/css/2ndPage.css">
     <title>Food Finds</title>
 </head>
-
 <body>
     <header>
-        <h1>GRUBFINDER</h1>
-        <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-    </header>
-    
-    <main class="container">
-        <section class="home">
-            <div class="home-text">
-                <h2>Looking to Grub?</h2>
-                <h3>Search restaurants by location, cuisine, and dietary preferences.</h3>
-                <button id="start-btn">Find A Restaurant</button>
-            </div>
-            
-            <div>
-                <video src="./assets/images/homeVid.mp4" id="home-video" autoplay loop muted type="video/mp4"></video>
-            </div>
-        </section>
+        <h1>Find a Restaurant Near You</h1>
         
+    </header>
+    <main>
         <section class="content">
             <section class="filter ">
-                 <div data-target="dropdown" class="dropContainer">
+                <div data-target="dropdown" class="dropContainer">
                     <a class='dropdown-trigger btn' href='#' data-target='dropdown'>Price</a>
                     <ul class="dropdown-content" id="dropdown">
                         <li><a href="#">$</a></li>
@@ -73,22 +52,20 @@
                         <li><a href="#">Vegan</a></li>
                         <li><a href="#">Paleo</a></li>
                         <li><a href="#">Gluten Free</a></li>
-                        </ul>
+                    </ul>
                 </div>
             </section>
-            <section class="restaurant-list">
-                <h2>Restaurants:</h2>
-                <section class="hidden">
-                    <!-- [restaurant list] -->
+            <h2>Restaurants:</h2>
+            <section class="hidden">
+                <!-- [restaurant list] -->
             </section>
-            <aside>
-                <div class="map">
-                    <img src="./assets/images/demo-map-image.jpg" alt="placeholder image"/>            
-                </div>
-            </aside>
         </section>
+        <aside>
+            <div class="map">
+                <img src="./assets/images/demo-map-image.jpg" alt="placeholder image"/>            
+            </div>
+        </aside>
     </main>
-    
     <footer>
         <span>Thanks for visiting!</span>
     </footer>
@@ -96,9 +73,9 @@
     <!--JavaScript jQuery-->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <!-- materialize -->
+    <!-- materialize -->
     <script type="text/javascript" src="js/materialize.min.js"></script>
-        <!-- materialize dropdown script -->
+    <!-- materialize dropdown script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.dropdown-trigger');
@@ -108,7 +85,6 @@
     <!-- materialize (dropdown) js link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- JavaScript File -->
-    <script src="./assets/js/script.js"></script>
     <script src="./assets/js/2ndPage.js"></script>
 </body>
 </html>
