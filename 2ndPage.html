@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery -->
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <!-- Materialize Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Link materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!-- materialize (dropdown) css link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link rel="stylesheet" href="./assets/css/2ndPage.css">
+    <title>Food Finds</title>
+</head>
+<body>
+    <header>
+        <h1>Find a Restaurant Near You</h1>
+        
+    </header>
+    <main>
+        <section class="content">
+            <section class="filter ">
+                <div data-target="dropdown" class="dropContainer">
+                    <a class='dropdown-trigger btn' href='#' data-target='dropdown'>Price</a>
+                    <ul class="dropdown-content" id="dropdown">
+                        <li><a href="#">$</a></li>
+                        <li><a href="#">$$</a></li>
+                        <li><a href="#">$$$</a></li>
+                    </ul>
+                </div>
+                <div data-target="dropdownTwo" class="dropContainer">
+                    <a class='dropdown-trigger btn' href='#' data-target='dropdownTwo'>Cuisine</a>
+                    <ul class="dropdown-content" id="dropdownTwo">
+                        <li><a href="#">Italian</a></li>
+                        <li><a href="#">Japanese</a></li>
+                        <li><a href="#">Mexican</a></li>
+                        <li><a href="#">American</a></li>
+                        <li><a href="#">Indian</a></li>
+                    </ul>
+                </div>
+                <div data-target="dropdownThree" class="dropContainer">
+                    <a class='dropdown-trigger btn' href='#' data-target='dropdownThree'>Dietary Preference</a>
+                    <ul class="dropdown-content" id="dropdownThree">
+                        <li><a href="#">Vegetarian</a></li>
+                        <li><a href="#">Vegan</a></li>
+                        <li><a href="#">Paleo</a></li>
+                        <li><a href="#">Gluten Free</a></li>
+                    </ul>
+                </div>
+            </section>
+            <h2>Restaurants:</h2>
+            <section class="hidden">
+                <!-- [restaurant list] -->
+            </section>
+        </section>
+        <aside>
+            <div class="map">
+                <img src="./assets/images/demo-map-image.jpg" alt="placeholder image"/>            
+            </div>
+        </aside>
+    </main>
+    <footer>
+        <span>Thanks for visiting!</span>
+    </footer>
+
+    <!--JavaScript jQuery-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- materialize -->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!-- materialize dropdown script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.dropdown-trigger');
+            var instances = M.Dropdown.init(elems, options);
+        });
+    </script>
+    <!-- materialize (dropdown) js link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- JavaScript File -->
+    <script src="./assets/js/2ndPage.js"></script>
+</body>
+</html>
