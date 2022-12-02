@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery -->
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <!-- Materialize Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Link materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="./assets/style.css">
-    <title>Document</title>
+    <title>Food Finds</title>
 </head>
 <body>
     <header>
-        <h1>Find a Restaurant Near Me</h1>
+        <h1>Find a Restaurant Near You</h1>
         <nav>
           <ul>
             <li><a href="#">Home</a></li>
@@ -20,7 +29,19 @@
         </nav>
     </header>
     
-    <main>
+    <main class="container">
+        <section class="home container-lg col s12">
+            <div class="home-text">
+                <h2>Find restaurants you can eat at.</h2>
+                <p>Search restaurants by location, cuisine, and dietary preferences.</p>
+                <button id="start-btn">Let's go</button>
+            </div>
+            
+            <div>
+                <video src="./assets/homeVid.mp4" id="home-video" autoplay loop muted type="video/mp4"></video>
+            </div>
+        </section>
+
         <section class="content">
             <section class="filter">
                 <h2>Restaurants:</h2>
@@ -29,6 +50,7 @@
                         <li><button>Price</button></li>
                         <li><button>Cuisine</button></li>
                         <li><button>Dietary preference</button></li>
+                        <!-- use materialize to style drop down -->
                     </ul> 
                 </nav>
             </section>
@@ -46,6 +68,12 @@
     <footer>
         <span>Thanks for visiting!</span>
     </footer>
+    <!--JavaScript jQuery-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- materialize -->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!-- JavaScript File -->
     <script src="./assets/script.js"></script>
 </body>
 </html>
