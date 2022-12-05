@@ -8,13 +8,13 @@
 body {
     display: flex;
     flex-direction: column;
-    background-color: whitesmoke;
+    background-color: black;
 }
   
 header {
     display: flex;
     padding: 1%;
-    background-color: #f86767fe;
+    background-color: #30699f;
     color: #fff;
     justify-content: space-between;
     align-items: center;
@@ -24,10 +24,6 @@ header {
   
 h1 {
     font-size: 200%;
-}
-
-h2{
-    font-size: 40px;
 }
   
 nav ul {
@@ -46,6 +42,9 @@ nav a {
     margin: 10px 20px;
 }
 
+nav a {
+
+}
 
 main {
     display: flex;
@@ -65,7 +64,6 @@ main {
     flex: 1 0 0;
     flex-direction: row;
     text-align: center;
-    margin: 20px;
 }
 
 .container {
@@ -106,9 +104,33 @@ video {
 
 }
 
-/* aside {
-    // temp
-} */
+.temp{
+    text-align: center;
+    color: white;
+}
+
+#start-btn {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    color: black;
+    border-radius: 15px;
+    box-shadow: 0 4px #999;
+}
+
+#start-btn:hover {
+    color: goldenrod;
+    transition: all .7s ;
+    
+}
+
+#start-btn:active {
+    background-color: #5f86aa;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px) .3s;
+}
 
 .map{
     flex: 1 0 0;
@@ -122,7 +144,6 @@ video {
     
 }
 
-  
 footer {
     display: flex;
     padding: 2%;
@@ -141,42 +162,3 @@ footer {
         flex-direction: column;
     }
   }
-
-  /* 2nd container ".content" css */
-img{
-    flex: 1 0 0;
-    flex-direction: row;
-    justify-content: center;
-    border-style: solid;
-    border-width: 1px;
-    width: 60%;
-    margin: 20px;
-    height: 20%;
-}
-
-.dropdown-trigger{
-    text-decoration: none;
-    color: black;
-}
-
-.dropdown-content{
-    padding: 0px; 
-}
-
-.dropdown-content li a{
-    text-decoration: none;
-}
-
-.dropdown-content li{
-    list-style: none;
-    text-align: left;
-}
-
-.preferences{
-    display: flex;
-    margin-top: 50px;
-}
-
-.dropContainer{
-    margin: 20px 0px;
-}
