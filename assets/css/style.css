@@ -8,13 +8,13 @@
 body {
     display: flex;
     flex-direction: column;
-    background-color: black;
+    background-color: whitesmoke;
 }
   
 header {
     display: flex;
     padding: 1%;
-    background-color: #30699f;
+    background-color: #f86767fe;
     color: #fff;
     justify-content: space-between;
     align-items: center;
@@ -46,9 +46,6 @@ nav a {
     margin: 10px 20px;
 }
 
-nav a {
-
-}
 
 main {
     display: flex;
