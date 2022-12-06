@@ -20,29 +20,30 @@
     <title>Food Finds</title>
 </head>
 
-<body>
-    <header>
-        <h1>GRUBFINDER</h1>
-        <nav>
-          <ul class="">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-    </header>
+<body class="#212121 grey darken-4">
+    <header class="##00897b teal darken-1">
+<nav>
+    <div class="nav-wrapper #00897b teal darken-1">
+      <a class="brand-logo">GRUBFINDER</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">HOME</a></li>
+        <li><a href="badges.html">ABOUT</a></li>
+        <li><a href="collapsible.html">THIRD</a></li>
+      </ul>
+    </div>
+</nav>   
+     </header>
     
     <main class="container">
         <section class="home">
             <div class="home-text">
                 <h2>Looking to Grub?</h2>
                 <h3>Search restaurants by location, cuisine, and dietary preferences.</h3>
-                <button id="start-btn">Find A Restaurant</button>
+                <button id="start-btn"<a class="waves-effect waves-light btn-small pulse"><i class="material-icons right">local_dining</i></a>Find A Restaurant</button>
             </div>
             
             <div>
-                <video src="./assets/images/homeVid.mp4" id="home-video" autoplay loop muted type="video/mp4"></video>
+                <video src="./assets/images/wineglass.mp4" id="home-video" autoplay loop muted type="video/mp4"></video>
             </div>
         </section>
         
@@ -67,7 +68,7 @@
                     </ul>
                 </div>
                 <div data-target="dropdownThree" class="dropContainer">
-                    <a class='dropdown-trigger btn' href='#' data-target='dropdownThree'>Dietary Preference</a>
+                    <a class='dropdown-trigger btn' href='#' data-target='dropdownThree'>Dietary</a>
                     <ul class="dropdown-content" id="dropdownThree">
                         <li><a href="#"><button class="dietChoice">Vegetarian</button></a></li>
                         <li><a href="#"><button class="dietChoice">Vegan</button></a></li>
@@ -77,8 +78,8 @@
                 </div>
             </section>
             <section class="restaurant-list">
-                <h2>Restaurants:</h2>
-                <section class="hidden"> 
+                <h2 class="white-text">Restaurants:</h2>
+                <section class="hidden">
                     <!-- [restaurant list] -->
             </section>
             <aside>
@@ -89,7 +90,7 @@
         </section>
     </main>
     
-    <footer>
+    <footer class="#00897b teal darken-1">
         <span>Thanks for visiting!</span>
     </footer>
 
