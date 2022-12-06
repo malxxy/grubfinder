@@ -1,4 +1,7 @@
 // JavaScript for first page
+
+
+
 // Default for containers
 $('.home').show();
 $('.content').hide();
@@ -8,3 +11,5 @@ $("#start-btn").on('click',function() {
     $('.home').hide();
     $('.content').show();
 });
+
+
