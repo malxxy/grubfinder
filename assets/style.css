@@ -19,6 +19,7 @@ header {
     justify-content: space-between;
     align-items: center;
     border-radius: 15px;
+    
 
 }
   
@@ -109,29 +110,6 @@ video {
     color: white;
 }
 
-#start-btn {
-    display: inline-block;
-    padding: 15px 25px;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    color: black;
-    border-radius: 15px;
-    box-shadow: 0 4px #999;
-}
-
-#start-btn:hover {
-    color: goldenrod;
-    transition: all .7s ;
-    
-}
-
-#start-btn:active {
-    background-color: #5f86aa;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px) .3s;
-}
-
 .map{
     flex: 1 0 0;
     flex-direction: row;
@@ -147,7 +125,6 @@ video {
 footer {
     display: flex;
     padding: 2%;
-    background-color: #30699f;
     color: #fff;
     justify-content: center;
     border-radius: 15px;
