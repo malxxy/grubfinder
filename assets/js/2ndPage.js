@@ -12,7 +12,6 @@ function saveChoice(){
         var priceChoice = this.textContent;
         console.log(priceChoice);
         localStorage.setItem("chosenPrice", priceChoice);
-        
     });
 
     $(".cuisineChoice").on("click", function() {
@@ -29,3 +28,19 @@ function saveChoice(){
 }
 
 saveChoice();
+
+// Restaurants API
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
+		'X-RapidAPI-Host': 'restaurants-api.p.rapidapi.com'
+	}
+};
+
+fetch('https://restaurants-api.p.rapidapi.com/restaurants?latitude=%3CREQUIRED%3E&longitude=%3CREQUIRED%3E&radius=%3CREQUIRED%3E', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+

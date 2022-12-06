@@ -78,8 +78,6 @@
                 </div>
             </section>
             <section class="restaurant-list">
-                <h2 class="white-text">Restaurants:</h2>
-                <section class="hidden">
                     <!-- [restaurant list] -->
             </section>
             <aside>
@@ -88,7 +86,7 @@
                 </div>
             </aside>
         </section>
-    </main>
+    </main>       
     
     <footer class="#00897b teal darken-1">
         <span>Thanks for visiting!</span>
@@ -106,6 +104,21 @@
             // var instances = M.Dropdown.init(elems, options);
         });
     </script>
+
+    <!-- geolocation -->
+    <script>
+        $('#location-button').click(function(){
+
+            if(navigator.geolocation)
+                navigator.geolocation.getCurrentPosition(function(position){
+                console.log(position);
+                });
+            else
+                console.log('geolocation is not supported');
+
+        });
+    </script>
+
     <!-- materialize (dropdown) js link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- JavaScript File -->
