@@ -44,4 +44,3 @@ fetch('https://restaurants-api.p.rapidapi.com/restaurants?latitude=%3CREQUIRED%3
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
 
-
