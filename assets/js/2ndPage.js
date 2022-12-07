@@ -29,33 +29,13 @@ function saveChoice(){
 
 saveChoice();
 
-// Restaurants API
-
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-		'X-RapidAPI-Host': 'restaurants-api.p.rapidapi.com'
-	}
-};
-
-// fetch('https://restaurants-api.p.rapidapi.com/restaurants?latitude=%3CREQUIRED%3E&longitude=%3CREQUIRED%3E&radius=%3CREQUIRED%3E', options)
-	// .then(response => response.json())
-	// .then(response => console.log(response))
-	// .catch(err => console.error(err));
-
-
-    // Google Maps API
-// let map;
-
-// function initMap() {
-//   map = new google.maps.Map(document.getElementById("map"), {
-//     center: { lat: -34.397, lng: 150.644 },
-//     zoom: 12,
-//   });
-//   document.getElementById("map").innerHTML= "hello world"
-// }
-// window.initMap = initMap;
+// Spoonacular API
+var restaurantsAPI = "130ba1a5b98741ee8dd6cc355ba285ed";
+// API calls
+// City API call (var = geoLocation)
+// Price API call (var = popPriceChoice)
+// Cuisine API call (var = popCuisineChoice)
+// Diet API call (var = popDietChoice)
 
 // Leaflet Map API
 var map = L.map("map").setView([51.505, -0.09], 13);
