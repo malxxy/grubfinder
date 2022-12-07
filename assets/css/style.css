@@ -110,26 +110,37 @@ video {
     // temp
 } */
 
-.map{
-    flex: 1 0 0;
-    flex-direction: row;
+#map{
     padding: 40px;
     text-align: center;
     border-style: solid;
     border-width: 1px;
     border-radius: 15px;
     border: white solid;
-    
+    height: 300px;
+    width: 400px;
+  }
+#maps {
+    height: 300px;
+    width: 400px;
+    margin: 20 10px;
+    padding: 20 10px;
+
+#map img {
+    opacity: 15%;
 }
 
-  
 footer {
-    display: flex;
+    display: block;
     padding: 2%;
     background-color: #30699f;
     color: #fff;
     justify-content: center;
     border-radius: 15px;
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
 }
 
 @media screen and (max-width: 768px) {
@@ -164,11 +175,11 @@ img{
 }
 
 .dropdown-content li a{
-    text-decoration: none;
+    text-decoration:;
 }
 
 .dropdown-content li{
-    list-style: none;
+    list-style: ;
     text-align: left;
 }
 
