@@ -29,23 +29,15 @@ function saveChoice(){
 
 saveChoice();
 
-// Restaurants API
-
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-// 		'X-RapidAPI-Host': 'restaurants-api.p.rapidapi.com'
-// 	}
-// };
-
-// fetch('https://restaurants-api.p.rapidapi.com/restaurants?latitude=%3CREQUIRED%3E&longitude=%3CREQUIRED%3E&radius=%3CREQUIRED%3E', options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
 
 
-
+// Spoonacular API
+var restaurantsAPI = "130ba1a5b98741ee8dd6cc355ba285ed";
+// API calls
+// City API call (var = geoLocation)
+// Price API call (var = popPriceChoice)
+// Cuisine API call (var = popCuisineChoice)
+// Diet API call (var = popDietChoice)
 
 // function getData () {
 //     console.log(fetch('https://example-data.draftbit.com/restaurants'));
