@@ -47,16 +47,29 @@ const options = {
 	}
 };
 
-// fetch('https://restaurants-api.p.rapidapi.com/restaurants?latitude=%3CREQUIRED%3E&longitude=%3CREQUIRED%3E&radius=%3CREQUIRED%3E', options)
-	// .then(response => response.json())
-	// .then(response => console.log(response))
-	// .catch(err => console.error(err));
+// Spoonacular API
+var restaurantsAPI = "130ba1a5b98741ee8dd6cc355ba285ed";
+// API calls
+// City API call (var = geoLocation)
+// Price API call (var = popPriceChoice)
+// Cuisine API call (var = popCuisineChoice)
+// Diet API call (var = popDietChoice)
 
-// Leaflet Map API
-var map = L.map("map").setView([51.505, -0.09], 13);
+// function getData () {
+//     console.log(fetch('https://example-data.draftbit.com/restaurants'));
+
+//     url = 'https://example-data.draftbit.com/restaurants';
+
+fetch('https://restaurants-api.p.rapidapi.com/restaurants?latitude=%3CREQUIRED%3E&longitude=%3CREQUIRED%3E&radius=%3CREQUIRED%3E', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
   attribution:
     '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
+
+// getData();
+
