@@ -110,18 +110,24 @@ video {
     color: white;
 }
 
-.map{
-    flex: 1 0 0;
-    flex-direction: row;
+#map{
     padding: 40px;
     text-align: center;
     border-style: solid;
     border-width: 1px;
     border-radius: 15px;
     border: white solid;
-    
-}
+    height: 300px;
+    width: 400px;
+  }
+#maps {
+    height: 300px;
+    width: 400px;
+    margin: 20 10px;
+    padding: 20 10px;
 
+
+}
 footer {
     display: flex;
     padding: 2%;
