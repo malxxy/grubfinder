@@ -36,3 +36,12 @@ var restaurantsAPI = "130ba1a5b98741ee8dd6cc355ba285ed";
 // Price API call (var = popPriceChoice)
 // Cuisine API call (var = popCuisineChoice)
 // Diet API call (var = popDietChoice)
+
+// Leaflet Map API
+var map = L.map("map").setView([51.505, -0.09], 13);
+
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 19,
+  attribution:
+    '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+}).addTo(map);
