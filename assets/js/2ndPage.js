@@ -52,14 +52,16 @@ saveChoice();
 
 //     url = 'https://example-data.draftbit.com/restaurants';
 
-//     fetch(url)
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       console.log(data);
-//     });
-// }
+fetch('https://restaurants-api.p.rapidapi.com/restaurants?latitude=%3CREQUIRED%3E&longitude=%3CREQUIRED%3E&radius=%3CREQUIRED%3E', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
 
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 19,
+  attribution:
+    '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+}).addTo(map);
 
 // getData();
+

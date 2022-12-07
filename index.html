@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <!-- MetaData -->
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+         integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+         crossorigin=""></script>
     <!-- jQuery -->
     <link
       rel="stylesheet"
@@ -17,7 +23,16 @@
     <!-- materialize (dropdown) css link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Food Finds</title>
+    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
+<!-- <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoKcP0alLXN4JBl3ES4fzVZtsWo1CQ9ow&callback=initMap">
+</script> -->
+
+<!-- <script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoKcP0alLXN4JBl3ES4fzVZtsWo1CQ9ow&callback=initMap&v=weekly"
+defer
+></script> -->
+<title>Food Finds</title>
 </head>
 
 <body class="#212121 grey darken-4">
@@ -80,11 +95,11 @@
             <section class="restaurant-list">
                     <!-- [restaurant list] -->
             </section>
-            <aside>
-                <div class="map">
-                    <img src="./assets/images/demo-map-image.jpg" alt="placeholder image"/>            
+            <section>
+                <div id="map">
+                    <h3 id="maps"></h3>
                 </div>
-            </aside>
+            </section>
         </section>
     </main>       
     
