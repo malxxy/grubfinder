@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
         integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
         crossorigin=""/>
-        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" async
          integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
          crossorigin=""></script>
     <!-- jQuery -->
@@ -22,16 +22,7 @@
     <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
     <!-- materialize (dropdown) css link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
-<!-- <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoKcP0alLXN4JBl3ES4fzVZtsWo1CQ9ow&callback=initMap">
-</script> -->
-
-<!-- <script
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoKcP0alLXN4JBl3ES4fzVZtsWo1CQ9ow&callback=initMap&v=weekly"
-defer
-></script> -->
+    <link rel="stylesheet" href="./assets/style.css">
 <title>Food Finds</title>
 </head>
 
@@ -63,10 +54,10 @@ defer
         </section>
         
         <section class="content">
-            <section class="filter ">
+            <section class="filter">
                  <div data-target="dropdown" class="dropContainer">
                     <a class='dropdown-trigger btn' href='#' data-target='dropdown'>Price</a>
-                    <ul class="dropdown-content" id="dropdown">
+                    <ul class="dropdown-content #00897b teal darken-1" id="dropdown">
                         <li><a href="#"><button class="priceChoice">$</button></a></li>
                         <li><a href="#"><button class="priceChoice">$$</button></a></li>
                         <li><a href="#"><button class="priceChoice">$$$</button></a></li>
@@ -74,7 +65,7 @@ defer
                 </div>
                 <div data-target="dropdownTwo" class="dropContainer">
                     <a class='dropdown-trigger btn' href='#' data-target='dropdownTwo'>Cuisine</a>
-                    <ul class="dropdown-content" id="dropdownTwo">
+                    <ul class="dropdown-content #00897b teal darken-1" id="dropdownTwo">
                         <li><a href="#"><button class="cuisineChoice">Italian</button></a></li>
                         <li><a href="#"><button class="cuisineChoice">Japanese</button></a></li>
                         <li><a href="#"><button class="cuisineChoice">Mexican</button></a></li>
@@ -84,7 +75,7 @@ defer
                 </div>
                 <div data-target="dropdownThree" class="dropContainer">
                     <a class='dropdown-trigger btn' href='#' data-target='dropdownThree'>Dietary</a>
-                    <ul class="dropdown-content" id="dropdownThree">
+                    <ul class="dropdown-content #00897b teal darken-1" id="dropdownThree">
                         <li><a href="#"><button class="dietChoice">Vegetarian</button></a></li>
                         <li><a href="#"><button class="dietChoice">Vegan</button></a></li>
                         <li><a href="#"><button class="dietChoice">Paleo</button></a></li>
@@ -92,16 +83,25 @@ defer
                         </ul>
                 </div>
             </section>
+            <!-- button for consent to access location -->
+            <section>
+                <button id="location-button">Use my Location</button>
+                <h2>Restaurants:</h2>
+                <div class="hidden"> 
+                <h2 class="white-text">Restaurants:</h2>
+                <div class="hidden">
+            </section>
+
             <section class="restaurant-list">
                     <!-- [restaurant list] -->
             </section>
-            <section>
+
+            <section class="mapcontainer">
                 <div id="map">
                     <img src="./assets/images/backdrop.png" alt="placeholder image" height="400px" width="300px"/> 
                 
                 </div>
             </section>
-            
         </section>
     </main>       
     
@@ -112,17 +112,6 @@ defer
     <!--JavaScript jQuery-->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <!-- materialize -->
-    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
-        <!-- materialize dropdown script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.dropdown-trigger');
-            // var instances = M.Dropdown.init(elems, options);
-        });
-    </script>
-
-    <!-- geolocation -->
     <script>
         $('#location-button').click(function(){
 

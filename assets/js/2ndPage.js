@@ -3,8 +3,16 @@ var cuisineChoice = document.querySelectorAll(".cuisineChoice");
 var dietChoice = document.querySelectorAll(".dietChoice");
 
 
-$('.dropdown-trigger').dropdown();
+ document.addEventListener("DOMContentLoaded", function () {
+   var elems = document.querySelectorAll(".dropdown-trigger");
+   var instances = M.Dropdown.init(elems, options);
+ });
 
+ $("select").formSelect({
+   dropdownOptions: {
+     container: $("body"),
+   },
+ });
 
 
 function saveChoice(){
@@ -39,27 +47,32 @@ const options = {
 	}
 };
 
+<<<<<<< HEAD
+fetch('https://restaurants-api.p.rapidapi.com/restaurants?latitude=%3CREQUIRED%3E&longitude=%3CREQUIRED%3E&radius=%3CREQUIRED%3E', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+=======
+// Spoonacular API
+var restaurantsAPI = "130ba1a5b98741ee8dd6cc355ba285ed";
+// API calls
+// City API call (var = geoLocation)
+// Price API call (var = popPriceChoice)
+// Cuisine API call (var = popCuisineChoice)
+// Diet API call (var = popDietChoice)
+>>>>>>> main
+
+// function getData () {
+//     console.log(fetch('https://example-data.draftbit.com/restaurants'));
+
+//     url = 'https://example-data.draftbit.com/restaurants';
+
 fetch('https://restaurants-api.p.rapidapi.com/restaurants?latitude=%3CREQUIRED%3E&longitude=%3CREQUIRED%3E&radius=%3CREQUIRED%3E', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
 
-
-    // Google Maps API
-// let map;
-
-// function initMap() {
-//   map = new google.maps.Map(document.getElementById("map"), {
-//     center: { lat: -34.397, lng: 150.644 },
-//     zoom: 12,
-//   });
-//   document.getElementById("map").innerHTML= "hello world"
-// }
-// window.initMap = initMap;
-
-// Leaflet Map API
-var map = L.map("map").setView([51.505, -0.09], 13);
-
+<<<<<<< HEAD
 L.tileLayer(
   "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw",
   {
@@ -71,3 +84,13 @@ L.tileLayer(
     id: "mapbox.streets",
   }
 ).addTo(mymap);
+=======
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 19,
+  attribution:
+    '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+}).addTo(map);
+
+// getData();
+
+>>>>>>> main
