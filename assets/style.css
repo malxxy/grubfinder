@@ -110,31 +110,36 @@ video {
     color: white;
 }
 
+.mapcontainer {
+    position: relative;
+}
+
 #map{
-    padding: 40px;
-    text-align: center;
+    position: absolute;
+    left: 10%;
     border-style: solid;
-    border-width: 1px;
+    border-width: 5px;
     border-radius: 15px;
-    border: white solid;
-    height: 300px;
-    width: 400px;
+    border: rgb(27, 114, 132) solid;
+    height: 600px;
+    width: 85%%;
   }
-#maps {
-    height: 300px;
-    width: 400px;
-    margin: 20 10px;
-    padding: 20 10px;
 
-
+#map img {
+    opacity: 0%;
+    z-index: 0;
 }
 footer {
+    position: fixed;
+    bottom: 0;
     display: flex;
     padding: 2%;
     color: #fff;
     justify-content: center;
     border-radius: 15px;
+    width: 100%;
 }
+
 
 @media screen and (max-width: 768px) {
     header {

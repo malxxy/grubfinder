@@ -3,8 +3,16 @@ var cuisineChoice = document.querySelectorAll(".cuisineChoice");
 var dietChoice = document.querySelectorAll(".dietChoice");
 
 
-$('.dropdown-trigger').dropdown();
+ document.addEventListener("DOMContentLoaded", function () {
+   var elems = document.querySelectorAll(".dropdown-trigger");
+   var instances = M.Dropdown.init(elems, options);
+ });
 
+ $("select").formSelect({
+   dropdownOptions: {
+     container: $("body"),
+   },
+ });
 
 
 function saveChoice(){
@@ -43,19 +51,6 @@ const options = {
 	// .then(response => response.json())
 	// .then(response => console.log(response))
 	// .catch(err => console.error(err));
-
-
-    // Google Maps API
-// let map;
-
-// function initMap() {
-//   map = new google.maps.Map(document.getElementById("map"), {
-//     center: { lat: -34.397, lng: 150.644 },
-//     zoom: 12,
-//   });
-//   document.getElementById("map").innerHTML= "hello world"
-// }
-// window.initMap = initMap;
 
 // Leaflet Map API
 var map = L.map("map").setView([51.505, -0.09], 13);
