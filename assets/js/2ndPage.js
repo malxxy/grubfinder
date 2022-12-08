@@ -47,12 +47,6 @@ const options = {
 	}
 };
 
-<<<<<<< HEAD
-fetch('https://restaurants-api.p.rapidapi.com/restaurants?latitude=%3CREQUIRED%3E&longitude=%3CREQUIRED%3E&radius=%3CREQUIRED%3E', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-=======
 // Spoonacular API
 var restaurantsAPI = "130ba1a5b98741ee8dd6cc355ba285ed";
 // API calls
@@ -60,7 +54,6 @@ var restaurantsAPI = "130ba1a5b98741ee8dd6cc355ba285ed";
 // Price API call (var = popPriceChoice)
 // Cuisine API call (var = popCuisineChoice)
 // Diet API call (var = popDietChoice)
->>>>>>> main
 
 // function getData () {
 //     console.log(fetch('https://example-data.draftbit.com/restaurants'));

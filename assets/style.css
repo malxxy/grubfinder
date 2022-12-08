@@ -130,19 +130,11 @@ video {
     z-index: 0;
 }
 footer {
-<<<<<<< HEAD
-   position: fixed;
-   bottom: 0;
-   width: 100%;
-   height: 60px;    
-     color: #fff;
-=======
     position: fixed;
     bottom: 0;
     display: flex;
     padding: 2%;
     color: #fff;
->>>>>>> main
     justify-content: center;
     border-radius: 15px;
     width: 100%;
