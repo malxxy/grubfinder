@@ -1,69 +1,91 @@
 var priceChoice = document.querySelectorAll(".priceChoice");
 var cuisineChoice = document.querySelectorAll(".cuisineChoice");
 var dietChoice = document.querySelectorAll(".dietChoice");
+console.log(priceChoice);
 
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll(".dropdown-trigger");
+  M.Dropdown.init(elems, options);
+});
 
- document.addEventListener("DOMContentLoaded", function () {
-   var elems = document.querySelectorAll(".dropdown-trigger");
-   var instances = M.Dropdown.init(elems, options);
- });
+$("select").formSelect({
+  dropdownOptions: {
+    container: $("body"),
+  },
+});
 
- $("select").formSelect({
-   dropdownOptions: {
-     container: $("body"),
-   },
- });
+function saveChoice() {
+  $(".priceChoice").on("click", function () {
+    var priceChoice = this.textContent;
+    localStorage.setItem("chosenPrice", priceChoice);
+    populatePrice();
+  });
 
+  $(".cuisineChoice").on("click", function () {
+    var cuisineChoice = this.textContent;
+    localStorage.setItem("cuisineChoice", cuisineChoice);
+		populateCuisine()
+  });
 
-function saveChoice(){
-    $(".priceChoice").on("click", function() {
-        var priceChoice = this.textContent;
-        console.log(priceChoice);
-        localStorage.setItem("chosenPrice", priceChoice);
-    });
-
-    $(".cuisineChoice").on("click", function() {
-        var cuisineChoice = this.textContent;
-        console.log(cuisineChoice);
-        localStorage.setItem("cuisineChoice", cuisineChoice);
-    });
-
-    $(".dietChoice").on("click", function() {
-        var dietChoice = this.textContent;
-        console.log(dietChoice);
-        localStorage.setItem("dietChoice", dietChoice);
-    });
+  $(".dietChoice").on("click", function () {
+    var dietChoice = this.textContent;
+    localStorage.setItem("dietChoice", dietChoice);
+		populateDiet()
+  });
 }
 
 saveChoice();
 
 // Retrieving the saved preference for getItem
 
-function retrieveChoices(){
-    var price = localStorage.getItem("chosenPrice")
-    var cuisine = localStorage.getItem("cuisineChoice")
-    var diet = localStorage.getItem("dietChoice")
-    
-    return [price, cuisine, diet]
+function retrieveChoices() {
+  var price = localStorage.getItem("chosenPrice");
+  var cuisine = localStorage.getItem("cuisineChoice");
+  var diet = localStorage.getItem("dietChoice");
+
+  return [price, cuisine, diet];
+}
+
+// Preference History Function
+
+function populatePrice() {
+  var popPrice = document.getElementById("price-history");
+  popPrice.innerHTML = localStorage.getItem("chosenPrice");
+}
+
+function populateCuisine(){
+	var popCuisine = document.getElementById("cuisine-history");
+	popCuisine.innerHTML = localStorage.getItem("cuisineChoice")
 
 }
+
+function populateDiet() {
+	var popDiet = document.getElementById("diet-history");
+	popDiet.innerHTML = localStorage.getItem("dietChoice")
+}
+
+
 
 // Restaurants API
 
 const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-		'X-RapidAPI-Host': 'restaurants-api.p.rapidapi.com'
-	},
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": "SIGN-UP-FOR-KEY",
+    "X-RapidAPI-Host": "restaurants-api.p.rapidapi.com",
+  },
 };
 
 // ^^^^API Resolution^^^^
 
-fetch('https://restaurants-api.p.rapidapi.com/restaurants?latitude=%3CREQUIRED%3E&longitude=%3CREQUIRED%3E&radius=%3CREQUIRED%3E' + new URLSearchParams({latitude: 37, longitude: 122, radius: 4}), options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+fetch(
+  "https://restaurants-api.p.rapidapi.com/restaurants?latitude=%3CREQUIRED%3E&longitude=%3CREQUIRED%3E&radius=%3CREQUIRED%3E" +
+    new URLSearchParams({ latitude: 37, longitude: 122, radius: 4 }),
+  options
+)
+  .then((response) => response.json())
+  .then((response) => console.log(response))
+  .catch((err) => console.error(err));
 
 // function getData () {
 //     console.log(fetch('https://example-data.draftbit.com/restaurants'));

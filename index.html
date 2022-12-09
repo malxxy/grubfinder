@@ -34,7 +34,7 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="sass.html">HOME</a></li>
         <li><a href="badges.html">ABOUT</a></li>
-        <li><a href="collapsible.html">THIRD</a></li>
+        <li><a href="collapsible.html">HELP</a></li>
       </ul>
     </div>
 </nav>   
@@ -58,29 +58,29 @@
                 <div data-target="dropdown" class="dropContainer">
                    <a class='dropdown-trigger btn' href='#' data-target='dropdown'>Price</a>
                    <ul class="dropdown-content" id="dropdown">
-                       <li><a href="#">$</a></li>
-                       <li><a href="#">$$</a></li>
-                       <li><a href="#">$$$</a></li>
+                       <li><a href="#" class="priceChoice">$</a></li>
+                       <li><a href="#" class="priceChoice">$$</a></li>
+                       <li><a href="#" class="priceChoice">$$$</a></li>
                    </ul>
                </div>
                <div data-target="dropdownTwo" class="dropContainer">
                    <a class='dropdown-trigger btn' href='#' data-target='dropdownTwo'>Cuisine</a>
                    <ul class="dropdown-content" id="dropdownTwo">
-                       <li><a href="#">Italian</a></li>
-                       <li><a href="#">Japanese</a></li>
-                       <li><a href="#">Mexican</a></li>
-                       <li><a href="#">American</a></li>
-                       <li><a href="#">Indian</a></li>
+                       <li><a href="#" class="cuisineChoice">Italian</a></li>
+                       <li><a href="#" class="cuisineChoice">Japanese</a></li>
+                       <li><a href="#" class="cuisineChoice">Mexican</a></li>
+                       <li><a href="#" class="cuisineChoice">American</a></li>
+                       <li><a href="#" class="cuisineChoice">Indian</a></li>
                    </ul>
                </div>
                <div data-target="dropdownThree" class="dropContainer">
-                   <a class='dropdown-trigger btn' href='#' data-target='dropdownThree'>Dietary Preference</a>
-                   <ul class="dropdown-content" id="dropdownThree">
-                       <li><a href="#">Vegetarian</a></li>
-                       <li><a href="#">Vegan</a></li>
-                       <li><a href="#">Paleo</a></li>
-                       <li><a href="#">Gluten Free</a></li>
-                       </ul>
+                    <a class='dropdown-trigger btn' href='#' data-target='dropdownThree'>Dietary Preference</a>
+                    <ul class="dropdown-content" id="dropdownThree">
+                       <li><a href="#" class="dietChoice">Vegetarian</a></li>
+                       <li><a href="#" class="dietChoice">Vegan</a></li>
+                       <li><a href="#" class="dietChoice">Paleo</a></li>
+                       <li><a href="#" class="dietChoice">Gluten Free</a></li>
+                    </ul>
                </div>
            </section>
             <!-- button for consent to access location -->
@@ -95,11 +95,20 @@
                     <!-- [restaurant list] -->
             </section>
 
-            <section class="mapcontainer">
+            <!-- <section class="mapcontainer">
                 <div id="map">
                     <img src="./assets/images/backdrop.png" alt="placeholder image"/> 
                 
                 </div>
+            </section> -->
+            <!-- Preference Box -->
+            <section>
+                <div>
+                    Price History
+                </div>
+                <div id="price-history"></div>
+                <div id="cuisine-history"></div>
+                <div id="diet-history"></div>
             </section>
         </section>
     </main>       
