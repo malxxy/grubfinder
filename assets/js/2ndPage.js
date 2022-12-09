@@ -37,6 +37,17 @@ function saveChoice(){
 
 saveChoice();
 
+// Retrieving the saved preference for getItem
+
+function retrieveChoices(){
+    var price = localStorage.getItem("chosenPrice")
+    var cuisine = localStorage.getItem("cuisineChoice")
+    var diet = localStorage.getItem("dietChoice")
+    
+    return [price, cuisine, diet]
+
+}
+
 // Restaurants API
 
 const options = {
@@ -44,10 +55,12 @@ const options = {
 	headers: {
 		'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
 		'X-RapidAPI-Host': 'restaurants-api.p.rapidapi.com'
-	}
+	},
 };
 
-fetch('https://restaurants-api.p.rapidapi.com/restaurants?latitude=%3CREQUIRED%3E&longitude=%3CREQUIRED%3E&radius=%3CREQUIRED%3E', options)
+// ^^^^API Resolution^^^^
+
+fetch('https://restaurants-api.p.rapidapi.com/restaurants?latitude=%3CREQUIRED%3E&longitude=%3CREQUIRED%3E&radius=%3CREQUIRED%3E' + new URLSearchParams({latitude: 37, longitude: 122, radius: 4}), options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
