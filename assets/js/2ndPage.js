@@ -87,7 +87,7 @@ function pullAPI() {
     console.log(response);
   });
 
-  const settings = {
+  const settings2 = {
     "async": true,
     "crossDomain": true,
     "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants?locationId=" + locationId,
@@ -98,11 +98,11 @@ function pullAPI() {
     }
   };
   
-  $.ajax(settings).done(function (response) {
+  $.ajax(settings2).done(function (response) {
     console.log(response);
   });
 
-  const settings = {
+  const settings3 = {
     "async": true,
     "crossDomain": true,
     "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/getRestaurantDetails?restaurantsId=Restaurant_Review-g60750-d2467627-Reviews-Snooze_an_A_M_Eatery-San_Diego_California",
@@ -113,7 +113,7 @@ function pullAPI() {
     }
   };
   
-  $.ajax(settings).done(function (response) {
+  $.ajax(settings3).done(function (response) {
     console.log(response);
   });
 };
