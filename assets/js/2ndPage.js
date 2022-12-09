@@ -50,18 +50,18 @@ function retrieveChoices() {
 
 function populatePrice() {
   var popPrice = document.getElementById("price-history");
-  popPrice.innerHTML = localStorage.getItem("chosenPrice");
+  popPrice.innerHTML = `Price: ${localStorage.getItem("chosenPrice")}`;
 }
 
 function populateCuisine(){
 	var popCuisine = document.getElementById("cuisine-history");
-	popCuisine.innerHTML = localStorage.getItem("cuisineChoice")
+	popCuisine.innerHTML = `Cuisine: ${localStorage.getItem("cuisineChoice")}`;
 
 }
 
 function populateDiet() {
 	var popDiet = document.getElementById("diet-history");
-	popDiet.innerHTML = localStorage.getItem("dietChoice")
+	popDiet.innerHTML = `Diet: ${localStorage.getItem("dietChoice")}`;
 }
 
 
