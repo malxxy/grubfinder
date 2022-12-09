@@ -1,6 +1,8 @@
 var priceChoice = document.querySelectorAll(".priceChoice");
 var cuisineChoice = document.querySelectorAll(".cuisineChoice");
 var dietChoice = document.querySelectorAll(".dietChoice");
+var searchBtn = $("#search-btn");
+var userCity = "";
 console.log(priceChoice);
 
 // document.addEventListener("DOMContentLoaded", function () {
@@ -75,7 +77,6 @@ function retrieveChoices(){
     return [price, cuisine, diet];
 }
 
-
 // Leaflet Map api
 // var map = L.map("map").setView([51.505, -0.09], 13);
 // L.tileLayer(
@@ -90,66 +91,6 @@ function retrieveChoices(){
 //   }
 // )
 // .addTo(mymap);
-
-// RESTAURANT API
-var diningAPIkey = "130ba1a5b98741ee8dd6cc355ba285ed";
-var searchBtn = $("#search-btn");
-var userLocation = 
-
-// function diningParameters (price,cuisine,diet) {
-//   if (price == undefined && cuisine == undefined && diet == undefined) {
-//     GET https:s//api.spoonacular.com/food/restaurants/search
-
-function pullAPI() {
-  const settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation?query="+ userLocation,
-    "method": "GET",
-    "headers": {
-      "X-RapidAPI-Key": "9656de4eabmsha3cf15ece0d610dp105cabjsnc0d4301395e5",
-      "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
-    }
-  };
-  
-  $.ajax(settings).done(function (response) {
-    console.log(response);
-  });
-
-  const settings2 = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants?locationId=" + locationId,
-    "method": "GET",
-    "headers": {
-      "X-RapidAPI-Key": "9656de4eabmsha3cf15ece0d610dp105cabjsnc0d4301395e5",
-      "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
-    }
-  };
-  
-  $.ajax(settings2).done(function (response) {
-    console.log(response);
-  });
-
-  const settings3 = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/getRestaurantDetails?restaurantsId=Restaurant_Review-g60750-d2467627-Reviews-Snooze_an_A_M_Eatery-San_Diego_California",
-    "method": "GET",
-    "headers": {
-      "X-RapidAPI-Key": "9656de4eabmsha3cf15ece0d610dp105cabjsnc0d4301395e5",
-      "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
-    }
-  };
-  
-  $.ajax(settings3).done(function (response) {
-    console.log(response);
-  });
-};
-
-// searchBtn.addEventListener('click', pullAPI);
-
-
 
 // Find city name using lat and lon
 function getCity() {
@@ -173,8 +114,67 @@ function getCity() {
           var response = JSON.parse(xhr.responseText);
           var city = response.address.city;
           console.log(city);
+          localStorage.setItem("userCity",city)
+          var userCity = localStorage.getItem("userCity",userCity);
+          console.log(userCity);
           return;
       }
   }
 }  
 getCity();
+
+searchBtn.click(function() {
+  if (userCity == "") {
+    console.log("userError: ","Please allow current location to find restaurants in your location")
+  } else {
+    const settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation?query="+ userCity,
+      "method": "GET",
+      "headers": {
+        "X-RapidAPI-Key": "9656de4eabmsha3cf15ece0d610dp105cabjsnc0d4301395e5",
+        "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
+      }
+    };
+    
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+    });
+  };
+  var locationId = array.locationId;
+
+  // use location ID to search for restaurants
+
+  // const settings2 = {
+  //   "async": true,
+  //   "crossDomain": true,
+  //   "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants?locationId=" + locationId,
+  //   "method": "GET",
+  //   "headers": {
+  //     "X-RapidAPI-Key": "9656de4eabmsha3cf15ece0d610dp105cabjsnc0d4301395e5",
+  //     "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
+  //   }
+  // };
+  // $.ajax(settings2).done(function (response) {
+  //   console.log(response);
+  // });
+
+    // const settings3 = {
+  //   "async": true,
+  //   "crossDomain": true,
+  //   "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/getRestaurantDetails?restaurantsId=Restaurant_Review-g60750-d2467627-Reviews-Snooze_an_A_M_Eatery-San_Diego_California",
+  //   "method": "GET",
+  //   "headers": {
+  //     "X-RapidAPI-Key": "9656de4eabmsha3cf15ece0d610dp105cabjsnc0d4301395e5",
+  //     "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
+  //   }
+  // };
+  
+  // $.ajax(settings3).done(function (response) {
+  //   console.log(response);
+  // });
+});
+
+// TripAdvisor Outlines for Restaurant API
+var diningAPIkey = "130ba1a5b98741ee8dd6cc355ba285ed";
