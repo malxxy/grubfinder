@@ -40,35 +40,13 @@ saveChoice();
 // Retrieving the saved preference for getItem
 
 function retrieveChoices(){
-    var price = localStorage.getItem("chosenPrice")
-    var cuisine = localStorage.getItem("cuisineChoice")
-    var diet = localStorage.getItem("dietChoice")
+    var price = localStorage.getItem("chosenPrice");
+    var cuisine = localStorage.getItem("cuisineChoice");
+    var diet = localStorage.getItem("dietChoice");
     
-    return [price, cuisine, diet]
-
+    return [price, cuisine, diet];
 }
 
-// Restaurants API
-
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-		'X-RapidAPI-Host': 'restaurants-api.p.rapidapi.com'
-	},
-};
-
-// ^^^^API Resolution^^^^
-
-fetch('https://restaurants-api.p.rapidapi.com/restaurants?latitude=%3CREQUIRED%3E&longitude=%3CREQUIRED%3E&radius=%3CREQUIRED%3E' + new URLSearchParams({latitude: 37, longitude: 122, radius: 4}), options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-
-// function getData () {
-//     console.log(fetch('https://example-data.draftbit.com/restaurants'));
-
-//     url = 'https://example-data.draftbit.com/restaurants';
 
 // Leaflet Map api
 var map = L.map("map").setView([51.505, -0.09], 13);
@@ -83,3 +61,61 @@ L.tileLayer(
     id: "mapbox.streets",
   }
 ).addTo(mymap);
+
+// RESTAURANT API
+var diningAPIkey = "130ba1a5b98741ee8dd6cc355ba285ed";
+var searchBtn = $("#search-btn");
+var userLocation = 
+
+// function diningParameters (price,cuisine,diet) {
+//   if (price == undefined && cuisine == undefined && diet == undefined) {
+//     GET https:s//api.spoonacular.com/food/restaurants/search
+
+function pullAPI() {
+  const settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation?query="+ userLocation,
+    "method": "GET",
+    "headers": {
+      "X-RapidAPI-Key": "9656de4eabmsha3cf15ece0d610dp105cabjsnc0d4301395e5",
+      "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
+    }
+  };
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+
+  const settings2 = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants?locationId=" + locationId,
+    "method": "GET",
+    "headers": {
+      "X-RapidAPI-Key": "9656de4eabmsha3cf15ece0d610dp105cabjsnc0d4301395e5",
+      "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
+    }
+  };
+  
+  $.ajax(settings2).done(function (response) {
+    console.log(response);
+  });
+
+  const settings3 = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/getRestaurantDetails?restaurantsId=Restaurant_Review-g60750-d2467627-Reviews-Snooze_an_A_M_Eatery-San_Diego_California",
+    "method": "GET",
+    "headers": {
+      "X-RapidAPI-Key": "9656de4eabmsha3cf15ece0d610dp105cabjsnc0d4301395e5",
+      "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
+    }
+  };
+  
+  $.ajax(settings3).done(function (response) {
+    console.log(response);
+  });
+};
+
+searchBtn.addEventListener('click', pullAPI);
