@@ -3,10 +3,13 @@ var cuisineChoice = document.querySelectorAll(".cuisineChoice");
 var dietChoice = document.querySelectorAll(".dietChoice");
 console.log(priceChoice);
 
-document.addEventListener("DOMContentLoaded", function () {
-  var elems = document.querySelectorAll(".dropdown-trigger");
-  M.Dropdown.init(elems, options);
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//   var elems = document.querySelectorAll(".dropdown-trigger");
+//   M.Dropdown.init(elems, options);
+// });
+
+// Dropdown call
+$('.dropdown-trigger').dropdown();
 
 $("select").formSelect({
   dropdownOptions: {
@@ -74,18 +77,19 @@ function retrieveChoices(){
 
 
 // Leaflet Map api
-var map = L.map("map").setView([51.505, -0.09], 13);
-L.tileLayer(
-  "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw",
-  {
-    maxZoom: 18,
-    attribution:
-      'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-      '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-      'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    id: "mapbox.streets",
-  }
-).addTo(mymap);
+// var map = L.map("map").setView([51.505, -0.09], 13);
+// L.tileLayer(
+//   "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw",
+//   {
+//     maxZoom: 18,
+//     attribution:
+//       'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+//       '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+//       'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+//     id: "mapbox.streets",
+//   }
+// )
+// .addTo(mymap);
 
 // RESTAURANT API
 var diningAPIkey = "130ba1a5b98741ee8dd6cc355ba285ed";
@@ -143,4 +147,34 @@ function pullAPI() {
   });
 };
 
-searchBtn.addEventListener('click', pullAPI);
+// searchBtn.addEventListener('click', pullAPI);
+
+
+
+// Find city name using lat and lon
+function getCity() {
+  var xhr = new XMLHttpRequest();
+  // var lat = coordinates[0];
+  // var lng = coordinates[1];
+  var lat = 48.855709;
+  var lng = 2.298890;
+
+  // console.log('lat');
+
+  // Paste your LocationIQ token below.
+  xhr.open('GET', "https://us1.locationiq.com/v1/reverse.php?key=pk.5e9b4412affb8f01f877f95ad3832750&lat=" +
+  lat + "&lon=" + lng + "&format=json", true);
+  xhr.send();
+  xhr.onreadystatechange = processRequest;
+  xhr.addEventListener("readystatechange", processRequest, false);
+
+  function processRequest(e) {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+          var response = JSON.parse(xhr.responseText);
+          var city = response.address.city;
+          console.log(city);
+          return;
+      }
+  }
+}  
+getCity();
