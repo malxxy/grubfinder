@@ -142,10 +142,10 @@ searchBtn.click(function() {
       console.log(response);
     });
   };
-});
+  var locationId = array.locationId;
 
-// TripAdvisor Outlines for Restaurant API
-var diningAPIkey = "130ba1a5b98741ee8dd6cc355ba285ed";
+  // use location ID to search for restaurants
+
   // const settings2 = {
   //   "async": true,
   //   "crossDomain": true,
@@ -156,12 +156,11 @@ var diningAPIkey = "130ba1a5b98741ee8dd6cc355ba285ed";
   //     "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
   //   }
   // };
-  
   // $.ajax(settings2).done(function (response) {
   //   console.log(response);
   // });
 
-  // const settings3 = {
+    // const settings3 = {
   //   "async": true,
   //   "crossDomain": true,
   //   "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/getRestaurantDetails?restaurantsId=Restaurant_Review-g60750-d2467627-Reviews-Snooze_an_A_M_Eatery-San_Diego_California",
@@ -175,4 +174,7 @@ var diningAPIkey = "130ba1a5b98741ee8dd6cc355ba285ed";
   // $.ajax(settings3).done(function (response) {
   //   console.log(response);
   // });
-// };
+});
+
+// TripAdvisor Outlines for Restaurant API
+var diningAPIkey = "130ba1a5b98741ee8dd6cc355ba285ed";
