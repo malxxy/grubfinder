@@ -47,6 +47,7 @@ function retrieveChoices(){
     return [price, cuisine, diet];
 }
 
+
 // Leaflet Map api
 var map = L.map("map").setView([51.505, -0.09], 13);
 L.tileLayer(
