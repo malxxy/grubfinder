@@ -32,7 +32,7 @@
     <div class="nav-wrapper #00897b teal darken-1">
       <a class="brand-logo">GRUBFINDER</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">HOME</a></li>
+        <li><a href="index.html">HOME</a></li>
         <li><a href="badges.html">ABOUT</a></li>
         <li><a href="collapsible.html">HELP</a></li>
       </ul>
@@ -100,6 +100,12 @@
                 <div class="hidden">
             </section>
 
+            <section class="search">
+                <button id="search-btn">Search now!
+                    <span><i class="small material-icons">search</i></span>
+                </button>
+            </section>
+
             <section class="restaurant-list">
                     <!-- [restaurant list] -->
             </section>
@@ -129,7 +135,12 @@
                 });
             else
                 console.log('geolocation is not supported');
-
+                var userLatitude = GeolocationPosition.coords.latitude;
+                console.log("Latitude",userLatitude)
+                var userLongitude = GeolocationPosition.coords.longitude;
+                console.log("Latitude",userLongitude);
+                // var userLocation = pull city name from latitude and longitude\
+                // somehow convert San Francisco to San%20Francisco
         });
     </script>
 
