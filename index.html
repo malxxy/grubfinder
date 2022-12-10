@@ -27,44 +27,111 @@
 </head>
 
 <body class="#212121 grey darken-4">
-    <header class="##00897b teal darken-1">
+    <header class="#ff5722 deep-orange">
 <nav>
-    <div class="nav-wrapper #00897b teal darken-1">
-      <a class="brand-logo">GRUBFINDER</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="badges.html">ABOUT</a></li>
-        <li><a href="collapsible.html">HELP</a></li>
+    <div class="banner-div nav-wrapper #ff5722 deep-orange">
+      <a class="brand-logo center #ff5722 deep-orange">GRUBFINDER</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li class="#ff5722 deep-orange"><a href="index.html">HOME</a></li>
+        <li class="#ff5722 deep-orange"><a href="badges.html">ABOUT</a></li>
+        <li class="#ff5722 deep-orange"><a href="collapsible.html">HELP</a></li>
       </ul>
     </div>
 </nav>   
      </header>
     
     <main class="container">
-        <section class="home">
-            <div class="home-text">
+        <section class="home valign-wrapper">
+            <div class="home-text center-align valign">
                 <h2>Looking to Grub?</h2>
                 <h3>Search restaurants by location, cuisine, and dietary preferences.</h3>
-                <button id="start-btn" class="waves-effect waves-light btn-small pulse"><i class="material-icons right">local_dining</i></a>Find A Restaurant</button>
+                <button id="start-btn" class="#dd2c00 deep-orange accent-4 waves-effect waves-light btn-large pulse"><i class="material-icons right">local_dining</i></a>Find A Restaurant</button>
             </div>
             
             <div>
-                <video src="./assets/images/wineglass.mp4" id="home-video" autoplay loop muted type="video/mp4"></video>
+                <video src="./assets/images/homeVid.mp4" class="valign-wrapper" id="home-video" autoplay loop muted type="video/mp4"></video>
             </div>
         </section>
         
         <section class="content">
-            <section class="filter ">
+            <section>
+                <div class="col s12 m7">
+                    <div class="card horizontal">
+                      <div class="card-stacked">
+                        <div class="card-content center-align">
+                          <p>Find the food you're craving. Allow the browser to use your location to get started.</p>
+                        </div>
+                        <div class="card-action">
+                            <button id="location-button" class="#dd2c00 deep-orange accent-4 waves-effect waves-light btn-large">Use my Location</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="preloader-wrapper big active hide">
+                    <div class="spinner-layer spinner-blue">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div><div class="gap-patch">
+                        <div class="circle"></div>
+                      </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+              
+                    <div class="spinner-layer spinner-red">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div><div class="gap-patch">
+                        <div class="circle"></div>
+                      </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+              
+                    <div class="spinner-layer spinner-yellow">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div><div class="gap-patch">
+                        <div class="circle"></div>
+                      </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+              
+                    <div class="spinner-layer spinner-green">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div><div class="gap-patch">
+                        <div class="circle"></div>
+                      </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                <div class="restaurant-list-title hide"> 
+                    <h2 class="white-text">Restaurants:</h2>
+                </div>
+            </section>
+
+            <section class="search hide">
+                <button id="search-btn #dd2c00 deep-orange">Search now!
+                    <span><i class="small material-icons">search</i></span>
+                </button>
+            </section>
+
+            <section class="filter center-align">
                 <div data-target="dropdown" class="dropContainer">
-                   <a class='dropdown-trigger btn' href='#' data-target='dropdown'>Price</a>
+                   <a class='dropdown-trigger btn #ff5722 deep-orange' href='#' data-target='dropdown'>Price<i class="material-icons right">arrow_drop_down</i></a>
                    <ul class="dropdown-content" id="dropdown">
                        <li><a href="#" class="priceChoice">$</a></li>
                        <li><a href="#" class="priceChoice">$$</a></li>
                        <li><a href="#" class="priceChoice">$$$</a></li>
+                       <li><a href="#" class="priceChoice">$$$$</a></li>
                    </ul>
                </div>
                <div data-target="dropdownTwo" class="dropContainer">
-                   <a class='dropdown-trigger btn' href='#' data-target='dropdownTwo'>Cuisine</a>
+                   <a class='dropdown-trigger btn #ff5722 deep-orange' href='#' data-target='dropdownTwo'>Cuisine<i class="material-icons right">arrow_drop_down</i></a>
                    <ul class="dropdown-content" id="dropdownTwo">
                        <li><a href="#" class="cuisineChoice">Italian</a></li>
                        <li><a href="#" class="cuisineChoice">Japanese</a></li>
@@ -74,7 +141,7 @@
                    </ul>
                </div>
                <div data-target="dropdownThree" class="dropContainer">
-                    <a class='dropdown-trigger btn' href='#' data-target='dropdownThree'>Dietary Preference</a>
+                    <a class='dropdown-trigger btn #ff5722 deep-orange' href='#' data-target='dropdownThree'>Dietary Preference<i class="material-icons right">arrow_drop_down</i></a>
                     <ul class="dropdown-content" id="dropdownThree">
                        <li><a href="#" class="dietChoice">Vegetarian</a></li>
                        <li><a href="#" class="dietChoice">Vegan</a></li>
@@ -83,51 +150,40 @@
                     </ul>
                </div>
            </section>
-            <!-- Preference Box -->
-            <section>
-                <div>
-                    Preference History
-                </div>
-                <div id="price-history"></div>
-                <div id="cuisine-history"></div>
-                <div id="diet-history"></div>
-            </section>
-            <!-- button for consent to access location -->
-            <section>
-                <button id="location-button" class="waves-effect waves-light btn">Use my Location
-                <div class="hidden"> 
-                <h2 class="white-text">Restaurants:</h2>
-                <div class="hidden">
-            </section>
-
-            <section class="search">
-                <button id="search-btn">Search now!
-                    <span><i class="small material-icons">search</i></span>
-                </button>
-            </section>
 
             <section class="restaurant-list">
                     <!-- [restaurant list] -->
             </section>
 
-            <section class="mapcontainer">
+            <!-- <section class="mapcontainer hide">
                 <div id="map">
                     <img src="./assets/images/backdrop.png" alt="placeholder image"/> 
-                
                 </div>
-            </section>
+            </section> -->        
+            <div id="map"></div>
+
         </section>
-    </main>       
+        <!-- Preference Box -->
+        <!-- <section>
+            <div>
+            Preference History
+            </div>
+            <div id="price-history"></div>
+            <div id="cuisine-history"></div>
+            <div id="diet-history"></div>
+        </section> -->
+      </main>       
     
-    <footer class="#00897b teal darken-1">
+    <footer class="#ff5722 deep-orange">
     </footer>
 
     <!--JavaScript jQuery-->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
+        // consent for location
         $('#location-button').click(function(){
-
+            $('.filter').show();
             if(navigator.geolocation)
                 navigator.geolocation.getCurrentPosition(function(position){
                 console.log(position);
@@ -135,13 +191,16 @@
             else
                 console.log('geolocation is not supported');
                 var userLatitude = GeolocationPosition.coords.latitude;
-                console.log("Latitude",userLatitude)
+                console.log("Latitude",userLatitude);
                 var userLongitude = GeolocationPosition.coords.longitude;
                 console.log("Latitude",userLongitude);
-                // var userLocation = pull city name from latitude and longitude\
-                // somehow convert San Francisco to San%20Francisco
         });
     </script>
+    <!-- google map -->
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+    defer
+  ></script>
 
     <!-- materialize (dropdown) js link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

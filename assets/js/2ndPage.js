@@ -1,12 +1,9 @@
 var priceChoice = document.querySelectorAll(".priceChoice");
 var cuisineChoice = document.querySelectorAll(".cuisineChoice");
 var dietChoice = document.querySelectorAll(".dietChoice");
+var searchBtn = $("#search-btn");
+var userCity = "";
 console.log(priceChoice);
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   var elems = document.querySelectorAll(".dropdown-trigger");
-//   M.Dropdown.init(elems, options);
-// });
 
 // Dropdown call
 $('.dropdown-trigger').dropdown();
@@ -75,7 +72,6 @@ function retrieveChoices(){
     return [price, cuisine, diet];
 }
 
-
 // Leaflet Map api
 // var map = L.map("map").setView([51.505, -0.09], 13);
 // L.tileLayer(
@@ -91,64 +87,6 @@ function retrieveChoices(){
 // )
 // .addTo(mymap);
 
-// RESTAURANT API
-var diningAPIkey = "130ba1a5b98741ee8dd6cc355ba285ed";
-var searchBtn = $("#search-btn");
-var userLocation = 
-
-// function diningParameters (price,cuisine,diet) {
-//   if (price == undefined && cuisine == undefined && diet == undefined) {
-//     GET https:s//api.spoonacular.com/food/restaurants/search
-
-function pullAPI() {
-  const settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation?query="+ userLocation,
-    "method": "GET",
-    "headers": {
-      "X-RapidAPI-Key": "9656de4eabmsha3cf15ece0d610dp105cabjsnc0d4301395e5",
-      "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
-    }
-  };
-  
-  $.ajax(settings).done(function (response) {
-    console.log(response);
-  });
-
-  const settings2 = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants?locationId=" + locationId,
-    "method": "GET",
-    "headers": {
-      "X-RapidAPI-Key": "9656de4eabmsha3cf15ece0d610dp105cabjsnc0d4301395e5",
-      "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
-    }
-  };
-  
-  $.ajax(settings2).done(function (response) {
-    console.log(response);
-  });
-
-  const settings3 = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/getRestaurantDetails?restaurantsId=Restaurant_Review-g60750-d2467627-Reviews-Snooze_an_A_M_Eatery-San_Diego_California",
-    "method": "GET",
-    "headers": {
-      "X-RapidAPI-Key": "9656de4eabmsha3cf15ece0d610dp105cabjsnc0d4301395e5",
-      "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
-    }
-  };
-  
-  $.ajax(settings3).done(function (response) {
-    console.log(response);
-  });
-};
-
-// searchBtn.addEventListener('click', pullAPI);
-
 
 
 
@@ -157,10 +95,12 @@ function getCity(one, two) {
   var xhr = new XMLHttpRequest();
   var lat = coordinates[0];
   var lng = coordinates[1];
+  var lat = userLatitude;
+  var lng = userLongitude;
   // var lat = 48.855709;
   // var lng = 2.298890;
 
-  // console.log('lat');
+  console.log('lat',lat);
 
   // Paste your LocationIQ token below.
   xhr.open('GET', "https://us1.locationiq.com/v1/reverse.php?key=pk.5e9b4412affb8f01f877f95ad3832750&lat=" +
@@ -174,8 +114,126 @@ function getCity(one, two) {
           var response = JSON.parse(xhr.responseText);
           var city = response.address.city;
           console.log(city);
+          localStorage.setItem("userCity",city)
+          userCity = localStorage.getItem("userCity",userCity);
+          console.log(userCity);
           return;
       }
   }
 }  
-getCity();
+
+searchBtn.click(function() {
+  var userLatitude = GeolocationPosition.coords.latitude();
+  var userLongitude = GeolocationPosition.coords.longitude();
+  console.log("userLatitude",userLatitude);
+  console.log("userLongitude",userLongitude);
+  getCity();
+  if (userCity == "") {
+    console.log("userError: ","Please allow current location to find restaurants in your location")
+  } else {
+    const settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation?query="+ userCity,
+      "method": "GET",
+      "headers": {
+        "X-RapidAPI-Key": "9656de4eabmsha3cf15ece0d610dp105cabjsnc0d4301395e5",
+        "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
+      }
+    };
+    
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+    });
+  };
+  // var locationId = array.locationId;
+
+  // use location ID to search for restaurants
+
+  // const settings2 = {
+  //   "async": true,
+  //   "crossDomain": true,
+  //   "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants?locationId=" + locationId,
+  //   "method": "GET",
+  //   "headers": {
+  //     "X-RapidAPI-Key": "9656de4eabmsha3cf15ece0d610dp105cabjsnc0d4301395e5",
+  //     "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
+  //   }
+  // };
+  // $.ajax(settings2).done(function (response) {
+  //   console.log(response);
+  // });
+
+    // const settings3 = {
+  //   "async": true,
+  //   "crossDomain": true,
+  //   "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/getRestaurantDetails?restaurantsId=Restaurant_Review-g60750-d2467627-Reviews-Snooze_an_A_M_Eatery-San_Diego_California",
+  //   "method": "GET",
+  //   "headers": {
+  //     "X-RapidAPI-Key": "9656de4eabmsha3cf15ece0d610dp105cabjsnc0d4301395e5",
+  //     "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
+  //   }
+  // };
+  
+  // $.ajax(settings3).done(function (response) {
+  //   console.log(response);
+  // });
+});
+
+// TripAdvisor Outlines for Restaurant API
+var diningAPIkey = "130ba1a5b98741ee8dd6cc355ba285ed";
+
+
+// google map
+
+let map, infoWindow;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 6,
+  });
+  infoWindow = new google.maps.InfoWindow();
+
+  const locationButton = document.createElement("button");
+
+  locationButton.textContent = "Pan to Current Location";
+  locationButton.classList.add("custom-map-control-button");
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+  locationButton.addEventListener("click", () => {
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+
+          infoWindow.setPosition(pos);
+          infoWindow.setContent("Location found.");
+          infoWindow.open(map);
+          map.setCenter(pos);
+        },
+        () => {
+          handleLocationError(true, infoWindow, map.getCenter());
+        }
+      );
+    } else {
+      // Browser doesn't support Geolocation
+      handleLocationError(false, infoWindow, map.getCenter());
+    }
+  });
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(
+    browserHasGeolocation
+      ? "Error: The Geolocation service failed."
+      : "Error: Your browser doesn't support geolocation."
+  );
+  infoWindow.open(map);
+}
+
+window.initMap = initMap;
