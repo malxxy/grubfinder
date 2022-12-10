@@ -151,13 +151,14 @@ function pullAPI() {
 
 
 
+
 // Find city name using lat and lon
-function getCity() {
+function getCity(one, two) {
   var xhr = new XMLHttpRequest();
-  // var lat = coordinates[0];
-  // var lng = coordinates[1];
-  var lat = 48.855709;
-  var lng = 2.298890;
+  var lat = coordinates[0];
+  var lng = coordinates[1];
+  // var lat = 48.855709;
+  // var lng = 2.298890;
 
   // console.log('lat');
 
