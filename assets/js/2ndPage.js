@@ -5,11 +5,6 @@ var searchBtn = $("#search-btn");
 var userCity = "";
 console.log(priceChoice);
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   var elems = document.querySelectorAll(".dropdown-trigger");
-//   M.Dropdown.init(elems, options);
-// });
-
 // Dropdown call
 $('.dropdown-trigger').dropdown();
 
@@ -92,15 +87,17 @@ function retrieveChoices(){
 // )
 // .addTo(mymap);
 
+
+
 // Find city name using lat and lon
 function getCity() {
   var xhr = new XMLHttpRequest();
-  // var lat = coordinates[0];
-  // var lng = coordinates[1];
-  var lat = 48.855709;
-  var lng = 2.298890;
+  var lat = userLatitude;
+  var lng = userLongitude;
+  // var lat = 48.855709;
+  // var lng = 2.298890;
 
-  // console.log('lat');
+  console.log('lat',lat);
 
   // Paste your LocationIQ token below.
   xhr.open('GET', "https://us1.locationiq.com/v1/reverse.php?key=pk.5e9b4412affb8f01f877f95ad3832750&lat=" +
@@ -115,15 +112,19 @@ function getCity() {
           var city = response.address.city;
           console.log(city);
           localStorage.setItem("userCity",city)
-          var userCity = localStorage.getItem("userCity",userCity);
+          userCity = localStorage.getItem("userCity",userCity);
           console.log(userCity);
           return;
       }
   }
 }  
-getCity();
 
 searchBtn.click(function() {
+  var userLatitude = GeolocationPosition.coords.latitude();
+  var userLongitude = GeolocationPosition.coords.longitude();
+  console.log("userLatitude",userLatitude);
+  console.log("userLongitude",userLongitude);
+  getCity();
   if (userCity == "") {
     console.log("userError: ","Please allow current location to find restaurants in your location")
   } else {
@@ -142,7 +143,7 @@ searchBtn.click(function() {
       console.log(response);
     });
   };
-  var locationId = array.locationId;
+  // var locationId = array.locationId;
 
   // use location ID to search for restaurants
 
