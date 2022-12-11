@@ -149,20 +149,20 @@ footer {
    color: #fff;
 }
 
-
+/* #map { height: 360px; } */
 #map {
     height: 100%;
-  }
+}
   
 
-  html,
-  body {
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
-  }
+}
 
-  
+
 @media screen and (max-width: 768px) {
     header {
       flex-direction: column;

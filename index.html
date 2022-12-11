@@ -160,7 +160,18 @@
                     <img src="./assets/images/backdrop.png" alt="placeholder image"/> 
                 </div>
             </section> -->        
-            <div id="map"></div>
+            <!-- <div id="map"></div> -->
+            <iframe
+              class="map"
+              width="1400"
+              height="1000"
+              style="border:0"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src=''
+              >
+            </iframe>
 
         </section>
         <!-- Preference Box -->
@@ -190,17 +201,23 @@
                 });
             else
                 console.log('geolocation is not supported');
-                var userLatitude = GeolocationPosition.coords.latitude;
-                console.log("Latitude",userLatitude);
-                var userLongitude = GeolocationPosition.coords.longitude;
-                console.log("Latitude",userLongitude);
+                // var userLatitude = GeolocationPosition.coords.latitude;
+                // console.log("Latitude",userLatitude);
+                // var userLongitude = GeolocationPosition.coords.longitude;
+                // console.log("Latitude",userLongitude);
         });
     </script>
     <!-- google map -->
-    <script
+    <!-- <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
     defer
-  ></script>
+  ></script> -->
+  
+  <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/> -->
+<!-- Make sure you put this AFTER Leaflet's CSS reference -->
+<!-- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script> -->
+
+
 
     <!-- materialize (dropdown) js link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
