@@ -43,9 +43,9 @@ nav a {
     margin: 10px 20px;
 }
 
-nav a {
+/* nav a {
 
-}
+} */
 
 main {
     display: flex;
@@ -122,7 +122,7 @@ video {
     border-radius: 15px;
     border: rgb(27, 114, 132) solid;
     height: 600px;
-    width: 85%%;
+    width: 85%;
   }
 
 #map img {
@@ -130,6 +130,7 @@ video {
     z-index: 0;
 }
 footer {
+<<<<<<< HEAD
     position: fixed;
     bottom: 0;
     display: flex;
@@ -138,6 +139,18 @@ footer {
     justify-content: center;
     border-radius: 15px;
     width: 100%;
+=======
+   display: inline-block;
+   position: fixed;
+   text-align: center;
+   justify-content: center;
+   border-radius: 15px;
+   bottom: 0;
+   width: 100%;
+   height: 60px;    
+   color: #fff;
+   
+>>>>>>> 1881e414ccb358284403674551759185e75e0f1e
 }
 
 
