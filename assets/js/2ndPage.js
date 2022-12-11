@@ -7,6 +7,8 @@ console.log(priceChoice);
 
 // Dropdown call
 $('.dropdown-trigger').dropdown();
+$('.filter').hide();
+$('.search').hide();
 
 $("select").formSelect({
   dropdownOptions: {
@@ -74,8 +76,8 @@ function retrieveChoices(){
 
 
 
-// TripAdvisor Outlines for Restaurant API
-var diningAPIkey = "130ba1a5b98741ee8dd6cc355ba285ed";
+// // TripAdvisor Outlines for Restaurant API
+// var diningAPIkey = "130ba1a5b98741ee8dd6cc355ba285ed";
 
 
 
@@ -139,7 +141,6 @@ var addressInput = document.getElementById("address");
 var cityInput = document.getElementById("city");
 
 
-
 $("#address-button").on("click", function() {
 
   address = addressInput.value;
@@ -168,5 +169,23 @@ function displayMap(location){
     $(".map").attr("src",newSRC);
     
     console.log(iframe);
+
+    $(".filter").show();
+    $(".search").show();
 };
 
+// grab user location and pull restaurants
+// searchBtn.on("click", function () {
+//   const options = {
+//     method: 'GET',
+//     headers: {
+//         'X-RapidAPI-Key': '10e5f999d2msh71069d15be6dc99p195bd9jsnd6a103a76c05',
+//         'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
+//     }
+// };
+
+// fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=12.91285&longitude=100.87808&limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US', options)
+//     .then(response => response.json())
+//     .then(response => console.log(response))
+//     .catch(err => console.error(err));
+// });
