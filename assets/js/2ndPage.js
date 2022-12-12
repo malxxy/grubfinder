@@ -3,6 +3,8 @@ var cuisineChoice = document.querySelectorAll(".cuisineChoice");
 var dietChoice = document.querySelectorAll(".dietChoice");
 var searchBtn = $("#search-btn");
 var userCity = "";
+var lat = NaN;
+var lng = NaN;
 console.log(priceChoice);
 
 // document.addEventListener("DOMContentLoaded", function () {
@@ -12,6 +14,8 @@ console.log(priceChoice);
 
 // Dropdown call
 $('.dropdown-trigger').dropdown();
+$('.filter').hide();
+$('.search').hide();
 
 $("select").formSelect({
   dropdownOptions: {
@@ -85,8 +89,8 @@ function retrieveChoices(){
 
 
 
-// TripAdvisor Outlines for Restaurant API
-var diningAPIkey = "130ba1a5b98741ee8dd6cc355ba285ed";
+// // TripAdvisor Outlines for Restaurant API
+// var diningAPIkey = "130ba1a5b98741ee8dd6cc355ba285ed";
 
 
 
@@ -98,8 +102,8 @@ $("#location-button").on("click", function() {
     console.log(position);
     console.log(position.coords.latitude);
     console.log(position.coords.longitude);
-    var lat = position.coords.latitude;
-    var lng = position.coords.longitude;
+    lat = position.coords.latitude;
+    lng = position.coords.longitude;
     getCity(lat, lng);
   };
   
@@ -150,7 +154,6 @@ var addressInput = document.getElementById("address");
 var cityInput = document.getElementById("city");
 
 
-
 $("#address-button").on("click", function() {
 
   address = addressInput.value;
@@ -179,5 +182,29 @@ function displayMap(location){
     $(".map").attr("src",newSRC);
     
     console.log(iframe);
+
+    $(".filter").show();
+    $(".search").show();
 };
 
+// call secret key
+var key = config.rapid_API_key;
+
+// grab user location and pull restaurants (TRAVEL ADVISOR API)
+searchBtn.on("click", function () {
+  const options = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': key,
+        'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
+    }
+};
+stringLat = lat.toString();
+stringLng = lng.toString();
+console.log("StringLat",stringLat);
+console.log("StringLng",stringLng);
+fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=' + stringLat + '&longitude=' + stringLng + 'limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US', options)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
+});
