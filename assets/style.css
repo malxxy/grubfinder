@@ -167,6 +167,15 @@ body {
     width: 50%;
 }
 
+#enter-restaurants {
+    color:#ff5722;
+    background-color: #fbe9e7;
+    padding: 10px;
+    text-align: left;
+    margin: 10px;
+    list-style-type: square;
+}
+
 @media screen and (max-width: 768px) {
     header {
       flex-direction: column;
