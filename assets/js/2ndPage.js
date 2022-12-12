@@ -110,14 +110,9 @@ function getCity(latitude, longitude) {
   var xhr = new XMLHttpRequest();
   var lat = latitude;
   var lng = longitude;
-  // var lat = userLatitude;
-  // var lng = userLongitude;
-  // var lat = 48.855709;
-  // var lng = 2.298890;
 
   console.log(lat,lng);
 
-  // Paste your LocationIQ token below.
   xhr.open('GET', "https://us1.locationiq.com/v1/reverse.php?key=pk.5e9b4412affb8f01f877f95ad3832750&lat=" +
   lat + "&lon=" + lng + "&format=json", true);
   xhr.send();
@@ -155,8 +150,6 @@ $("#address-button").on("click", function() {
 
 function displayMap(location){
   var iframe = document.querySelector("iframe");
-    // var userCity;
-    // userCity = "Paris";
 
     // console.log(position.coords.latitude);
     // console.log(position.coords.longitude);
@@ -164,10 +157,7 @@ function displayMap(location){
   
     // console.log(iframe);
     newSRC ="https://www.google.com/maps/embed/v1/place?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&q=" + location
-    // var newSRC = string.replace(/value=\".*\"/, "value=\"\"");
-    // var aboutFlowersNew = aboutFlowers.replace("lovely", "beautiful");
-    // iframe.add("newSRC");
-    // iframe.src.add('src', 'newSRC');
+
     $(".map").attr("src",newSRC);
     
     console.log(iframe);
