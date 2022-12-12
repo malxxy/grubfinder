@@ -3,7 +3,7 @@ UCB Project 1
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+Find restaurants near you or at a specified location and filter by cuisine, diet, and price.
 
 - What was your motivation?
 - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
@@ -21,8 +21,16 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## Installation
 
-// Include link to Travel Advisor API so that grader knows to how to access API key
-// Copy and paste how config.js is configured
+Subscribe to Travel Advisor API which can be found on Rapid API [here](https://rapidapi.com/apidojo/api/travel-advisor).
+<br>
+Make a config.js file within the js folder on your local machine.
+<br>
+Code your config.js file with the following code:
+`var config = {
+    rapid_API_key: '10e5f999d2msh71069d15be6dc99p195bd9jsnd6a103a76c05'
+};`
+<br>
+Include the config.js file in the .gitignore file.
 
 ## Usage
 
