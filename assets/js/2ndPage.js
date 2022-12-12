@@ -174,18 +174,21 @@ function displayMap(location){
     $(".search").show();
 };
 
+// call secret key
+var key = config.rapid_API_key;
 // grab user location and pull restaurants
-// searchBtn.on("click", function () {
-//   const options = {
-//     method: 'GET',
-//     headers: {
-//         'X-RapidAPI-Key': '10e5f999d2msh71069d15be6dc99p195bd9jsnd6a103a76c05',
-//         'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
-//     }
-// };
 
-// fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=12.91285&longitude=100.87808&limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US', options)
-//     .then(response => response.json())
-//     .then(response => console.log(response))
-//     .catch(err => console.error(err));
-// });
+searchBtn.on("click", function () {
+  const options = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': key,
+        'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
+    }
+};
+
+fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=12.91285&longitude=100.87808&limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US', options)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
+});
