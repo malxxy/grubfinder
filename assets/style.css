@@ -14,17 +14,22 @@ body {
 header {
     display: flex;
     padding: 1%;
-    background-color: #30699f;
-    color: #fff;
     justify-content: space-between;
     align-items: center;
     border-radius: 15px;
-    
-
 }
   
 h1 {
     font-size: 200%;
+    color: #ff5722 deep-orange;
+}
+
+h2 {
+    font-size: 48px;
+}
+
+h3 {
+    font-size: 36px;
 }
   
 nav ul {
@@ -32,6 +37,7 @@ nav ul {
     min-width: 180px;
     list-style: none;
     justify-content: space-between;
+    color: #ff5722 deep-orange;
 }
   
 nav a {
@@ -40,12 +46,11 @@ nav a {
     font-weight: bold;
     text-decoration: none;
     position: relative;
-    margin: 10px 20px;
 }
 
-/* nav a {
-
-} */
+.banner-div {
+    border-radius: 15px;
+}
 
 main {
     display: flex;
@@ -73,19 +78,21 @@ main {
 
 .home {
     position: relative;
+    padding: 20px;
 }
 
 video {
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 15px;
 }
+
 .home-video {
     position:relative;
     z-index:0;
     overflow: hidden;
-    height: 400px;
-    width: 400px;
+    height: auto;
+    width: 100%;
 }
 
 .home-text {
@@ -98,11 +105,11 @@ video {
     z-index: 1;
     text-align:center;
     background-color: white;
-    opacity: 70%;
+    opacity: 80%;
     border-radius: 20px;
-    padding: 10px;
-    width: 35%;
-
+    padding: 0px 10px;
+    width: 50%;
+    line-height: 200px;
 }
 
 .temp{
@@ -129,6 +136,7 @@ video {
     opacity: 0%;
     z-index: 0;
 }
+
 footer {
 <<<<<<< HEAD
     position: fixed;
@@ -149,8 +157,19 @@ footer {
    width: 100%;
    height: 60px;    
    color: #fff;
-   
->>>>>>> 1881e414ccb358284403674551759185e75e0f1e
+}
+
+/* #map { height: 360px; } */
+#map {
+    height: 100%;
+}
+  
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 

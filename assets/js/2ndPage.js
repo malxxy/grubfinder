@@ -5,11 +5,6 @@ var searchBtn = $("#search-btn");
 var userCity = "";
 console.log(priceChoice);
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   var elems = document.querySelectorAll(".dropdown-trigger");
-//   M.Dropdown.init(elems, options);
-// });
-
 // Dropdown call
 $('.dropdown-trigger').dropdown();
 
@@ -92,15 +87,20 @@ function retrieveChoices(){
 // )
 // .addTo(mymap);
 
-// Find city name using lat and lon
-function getCity() {
-  var xhr = new XMLHttpRequest();
-  // var lat = coordinates[0];
-  // var lng = coordinates[1];
-  var lat = 48.855709;
-  var lng = 2.298890;
 
-  // console.log('lat');
+
+
+// Find city name using lat and lon
+function getCity(one, two) {
+  var xhr = new XMLHttpRequest();
+  var lat = coordinates[0];
+  var lng = coordinates[1];
+  var lat = userLatitude;
+  var lng = userLongitude;
+  // var lat = 48.855709;
+  // var lng = 2.298890;
+
+  console.log('lat',lat);
 
   // Paste your LocationIQ token below.
   xhr.open('GET', "https://us1.locationiq.com/v1/reverse.php?key=pk.5e9b4412affb8f01f877f95ad3832750&lat=" +
@@ -115,15 +115,19 @@ function getCity() {
           var city = response.address.city;
           console.log(city);
           localStorage.setItem("userCity",city)
-          var userCity = localStorage.getItem("userCity",userCity);
+          userCity = localStorage.getItem("userCity",userCity);
           console.log(userCity);
           return;
       }
   }
 }  
-getCity();
 
 searchBtn.click(function() {
+  var userLatitude = GeolocationPosition.coords.latitude();
+  var userLongitude = GeolocationPosition.coords.longitude();
+  console.log("userLatitude",userLatitude);
+  console.log("userLongitude",userLongitude);
+  getCity();
   if (userCity == "") {
     console.log("userError: ","Please allow current location to find restaurants in your location")
   } else {
@@ -142,7 +146,7 @@ searchBtn.click(function() {
       console.log(response);
     });
   };
-  var locationId = array.locationId;
+  // var locationId = array.locationId;
 
   // use location ID to search for restaurants
 
@@ -178,3 +182,101 @@ searchBtn.click(function() {
 
 // TripAdvisor Outlines for Restaurant API
 var diningAPIkey = "130ba1a5b98741ee8dd6cc355ba285ed";
+
+
+// google map
+
+// let map, infoWindow;
+
+// function initMap() {
+//   map = new google.maps.Map(document.getElementById("map"), {
+//     center: { lat: -34.397, lng: 150.644 },
+//     zoom: 6,
+//   });
+//   infoWindow = new google.maps.InfoWindow();
+
+//   const locationButton = document.createElement("button");
+
+//   locationButton.textContent = "Pan to Current Location";
+//   locationButton.classList.add("custom-map-control-button");
+//   map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+//   locationButton.addEventListener("click", () => {
+//     // Try HTML5 geolocation.
+//     if (navigator.geolocation) {
+//       navigator.geolocation.getCurrentPosition(
+//         (position) => {
+//           const pos = {
+//             lat: position.coords.latitude,
+//             lng: position.coords.longitude,
+//           };
+
+//           infoWindow.setPosition(pos);
+//           infoWindow.setContent("Location found.");
+//           infoWindow.open(map);
+//           map.setCenter(pos);
+//         },
+//         () => {
+//           handleLocationError(true, infoWindow, map.getCenter());
+//         }
+//       );
+//     } else {
+//       // Browser doesn't support Geolocation
+//       handleLocationError(false, infoWindow, map.getCenter());
+//     }
+//   });
+// }
+
+// function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+//   infoWindow.setPosition(pos);
+//   infoWindow.setContent(
+//     browserHasGeolocation
+//       ? "Error: The Geolocation service failed."
+//       : "Error: Your browser doesn't support geolocation."
+//   );
+//   infoWindow.open(map);
+// }
+
+// window.initMap = initMap;
+
+// // var map = L.map('map').setView([51.5, -0.1], 12);
+// // L.tileLayer('https://retina-tiles.p.rapidapi.com/local/osm{r}/v1/{z}/{x}/{y}.png?rapidapi-key=4a848d017cmshb424200fb94e00ep1e9b1ejsnce642e43d80c', {
+// // attribution: 'Tiles &copy: <a href="https://www.maptilesapi.com/retina-tiles/">Retina Tiles API</a>, Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+// // maxZoom: 19
+// // }).addTo(map);
+
+// // console.log(GeolocationPosition.coords.latitude);
+
+// const settings = {
+// 	"async": true,
+// 	"crossDomain": true,
+// 	"url": "https://mycookbook-io1.p.rapidapi.com/recipes/rapidapi",
+// 	"method": "POST",
+// 	"headers": {
+// 		"content-type": "text/plain",
+// 		"X-RapidAPI-Key": "4a848d017cmshb424200fb94e00ep1e9b1ejsnce642e43d80c",
+// 		"X-RapidAPI-Host": "mycookbook-io1.p.rapidapi.com"
+// 	},
+// 	"data": "https://www.jamieoliver.com/recipes/vegetables-recipes/superfood-salad/"
+// };
+
+// $.ajax(settings).done(function (response) {
+// 	console.log(response);
+// });
+
+
+
+
+
+// Map
+var iframe = document.querySelector("iframe");
+var userCity;
+userCity = "Paris";
+// console.log(iframe);
+newSRC ="https://www.google.com/maps/embed/v1/place?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&q=" + userCity;
+// var newSRC = string.replace(/value=\".*\"/, "value=\"\"");
+// var aboutFlowersNew = aboutFlowers.replace("lovely", "beautiful");
+// iframe.add("newSRC");
+// iframe.src.add('src', 'newSRC');
+$(".map").attr("src",newSRC);
+
+console.log(iframe);
