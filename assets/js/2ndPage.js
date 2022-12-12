@@ -16,6 +16,7 @@ console.log(priceChoice);
 $('.dropdown-trigger').dropdown();
 $('.filter').hide();
 $('.search').hide();
+$('.restaurant-list').hide();
 
 $("select").formSelect({
   dropdownOptions: {
@@ -199,12 +200,37 @@ searchBtn.on("click", function () {
         'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
     }
 };
+
 stringLat = lat.toString();
 stringLng = lng.toString();
 console.log("StringLat",stringLat);
 console.log("StringLng",stringLng);
+
 fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=' + stringLat + '&longitude=' + stringLng + 'limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US', options)
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
+
+$(".restaurant-list").show();
+
+// JSON to array 
+var restaurantArray = response.json();
+var parsed = JSON.parse(response);
+console.log(parsed);
+
+// append restaurants to div
+for (let index = 0; index < restaurantArray.length; index++) {
+  var list = document.createElement(ul);
+  list.textContent = restaurantArray.name[index];
+  document.body.appendChild(li);
+  }
+
+//displayRstrntsMap();
 });
+
+// function displayRstrntsMap() {
+  // var locationArray = data.array.latitude.and.longitude.of.every.restaurant
+  // for (let index = 0; index < array.length; index++) {
+  //    const element = array[index];
+  //  }
+//};
