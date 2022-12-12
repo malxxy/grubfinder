@@ -191,11 +191,18 @@ searchBtn.on("click", function () {
 };
 
 stringLat = lat.toString();
-stringLng = lng.toString();
-console.log("StringLat",stringLat);
-console.log("StringLng",stringLng);
+console.log(lat);
 
-fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=' + stringLat + '&longitude=' + stringLng + 'limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US', options)
+stringLng = lng.toString();
+console.log(stringLat);
+console.log(stringLng);
+
+var latitude = stringLat;
+var longitude = stringLng;
+
+console.log('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=' + latitude + '&longitude=' + longitude + 'limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US');
+
+fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=' + latitude + '&longitude=' + longitude + 'limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US', options)
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
