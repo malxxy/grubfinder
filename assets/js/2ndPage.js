@@ -179,7 +179,7 @@ function displayMap(location){
 // call secret key
 var key = config.rapid_API_key;
 
-// grab user location and pull restaurants
+// grab user location and pull restaurants (TRAVEL ADVISOR API)
 searchBtn.on("click", function () {
   const options = {
     method: 'GET',
@@ -188,8 +188,11 @@ searchBtn.on("click", function () {
         'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
     }
 };
-
-fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=' + lat + '&longitude=' + lng + 'limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US', options)
+stringLat = lat.toString();
+stringLng = lng.toString();
+console.log("StringLat",stringLat);
+console.log("StringLng",stringLng);
+fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=' + stringLat + '&longitude=' + stringLng + 'limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US', options)
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
