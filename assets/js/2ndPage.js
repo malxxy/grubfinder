@@ -3,6 +3,8 @@ var cuisineChoice = document.querySelectorAll(".cuisineChoice");
 var dietChoice = document.querySelectorAll(".dietChoice");
 var searchBtn = $("#search-btn");
 var userCity = "";
+var lat = NaN;
+var lng = NaN;
 console.log(priceChoice);
 
 // Dropdown call
@@ -89,8 +91,8 @@ $("#location-button").on("click", function() {
     console.log(position);
     console.log(position.coords.latitude);
     console.log(position.coords.longitude);
-    var lat = position.coords.latitude;
-    var lng = position.coords.longitude;
+    lat = position.coords.latitude;
+    lng = position.coords.longitude;
     getCity(lat, lng);
   };
   
@@ -176,8 +178,8 @@ function displayMap(location){
 
 // call secret key
 var key = config.rapid_API_key;
-// grab user location and pull restaurants
 
+// grab user location and pull restaurants
 searchBtn.on("click", function () {
   const options = {
     method: 'GET',
@@ -187,7 +189,7 @@ searchBtn.on("click", function () {
     }
 };
 
-fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=12.91285&longitude=100.87808&limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US', options)
+fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=' + lat + '&longitude=' + lng + 'limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US', options)
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
