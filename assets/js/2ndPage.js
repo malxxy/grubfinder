@@ -1,11 +1,15 @@
 var priceChoice = document.querySelectorAll(".priceChoice");
 var cuisineChoice = document.querySelectorAll(".cuisineChoice");
 var dietChoice = document.querySelectorAll(".dietChoice");
+var listContainer = document.getElementById("enter-restaurants");
 var searchBtn = $("#search-btn");
 var userCity = "";
 var lat = NaN;
 var lng = NaN;
 console.log(priceChoice);
+
+// Bring in our API Key
+var rapid_API_ke;
 
 // Dropdown call
 $('.dropdown-trigger').dropdown();
@@ -195,24 +199,25 @@ stringLng = lng.toString();
 console.log("StringLat",stringLat);
 console.log("StringLng",stringLng);
 
-fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=' + stringLat + '&longitude=' + stringLng + 'limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US', options)
+fetch(`https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=${stringLat}&longitude=${stringLng}&limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US`, options)
     .then(response => response.json())
-    .then(response => console.log(response))
+    .then(response => {
+      console.log(response)  // the data object that returns from our fetch call
+      let tempData = response.data;
+      console.log(tempData);
+      for (let index = 0; index < tempData.length; index++) {
+       // console.log(tempData[index].name)
+        var list = document.createElement('ul');
+        list.textContent = tempData[index].name;
+        console.log(list);
+        console.log(listContainer);
+        listContainer.appendChild(list);
+      }
+    })
     .catch(err => console.error(err));
 
 $(".restaurant-list").show();
 
-// JSON to array 
-var restaurantArray = response.json();
-var parsed = JSON.parse(response);
-console.log(parsed);
-
-// append restaurants to div
-for (let index = 0; index < restaurantArray.length; index++) {
-  var list = document.createElement(ul);
-  list.textContent = restaurantArray.name[index];
-  document.body.appendChild(li);
-  }
 
 //displayRstrntsMap();
 });
