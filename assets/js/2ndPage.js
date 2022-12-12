@@ -51,12 +51,6 @@ function retrieveChoices() {
   return [price, cuisine, diet];
 }
 
-<<<<<<< HEAD
-fetch('https://restaurants-api.p.rapidapi.com/restaurants?latitude=%3CREQUIRED%3E&longitude=%3CREQUIRED%3E&radius=%3CREQUIRED%3E', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-=======
 // Spoonacular API
 var restaurantsAPI = "130ba1a5b98741ee8dd6cc355ba285ed";
 // API calls
@@ -64,9 +58,71 @@ var restaurantsAPI = "130ba1a5b98741ee8dd6cc355ba285ed";
 // Price API call (var = popPriceChoice)
 // Cuisine API call (var = popCuisineChoice)
 // Diet API call (var = popDietChoice)
->>>>>>> main
 
-  // console.log('lat');
+function populatePrice() {
+  var popPrice = document.getElementById("price-history");
+  popPrice.innerHTML = `Price: ${localStorage.getItem("chosenPrice")}`;
+}
+
+function populateCuisine(){
+	var popCuisine = document.getElementById("cuisine-history");
+	popCuisine.innerHTML = `Cuisine: ${localStorage.getItem("cuisineChoice")}`;
+
+}
+
+function populateDiet() {
+	var popDiet = document.getElementById("diet-history");
+	popDiet.innerHTML = `Diet: ${localStorage.getItem("dietChoice")}`;
+}
+
+function retrieveChoices(){
+    var price = localStorage.getItem("chosenPrice");
+    var cuisine = localStorage.getItem("cuisineChoice");
+    var diet = localStorage.getItem("dietChoice");
+    
+    return [price, cuisine, diet];
+}
+
+
+
+// TripAdvisor Outlines for Restaurant API
+var diningAPIkey = "130ba1a5b98741ee8dd6cc355ba285ed";
+
+
+
+// Location and Map
+
+$("#location-button").on("click", function() {
+
+  const successCallback = (position) => {
+    console.log(position);
+    console.log(position.coords.latitude);
+    console.log(position.coords.longitude);
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+    getCity(lat, lng);
+  };
+  
+  const errorCallback = (error) => {
+    console.log(error);
+  };
+  
+  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
+
+});
+
+
+function getCity(latitude, longitude) {
+  var xhr = new XMLHttpRequest();
+  var lat = latitude;
+  var lng = longitude;
+  // var lat = userLatitude;
+  // var lng = userLongitude;
+  // var lat = 48.855709;
+  // var lng = 2.298890;
+
+  console.log(lat,lng);
 
   // Paste your LocationIQ token below.
   xhr.open('GET', "https://us1.locationiq.com/v1/reverse.php?key=pk.5e9b4412affb8f01f877f95ad3832750&lat=" +
@@ -83,64 +139,45 @@ var restaurantsAPI = "130ba1a5b98741ee8dd6cc355ba285ed";
           localStorage.setItem("userCity",city)
           var userCity = localStorage.getItem("userCity",userCity);
           console.log(userCity);
+          displayMap(userCity)
           return;
       }
   }
-}  
-getCity();
+};
 
-searchBtn.click(function() {
-  if (userCity == "") {
-    console.log("userError: ","Please allow current location to find restaurants in your location")
-  } else {
-    const settings = {
-      "async": true,
-      "crossDomain": true,
-      "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation?query="+ userCity,
-      "method": "GET",
-      "headers": {
-        "X-RapidAPI-Key": "9656de4eabmsha3cf15ece0d610dp105cabjsnc0d4301395e5",
-        "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
-      }
-    };
-    
-    $.ajax(settings).done(function (response) {
-      console.log(response);
-    });
-  };
-  var locationId = array.locationId;
 
-  // use location ID to search for restaurants
+var addressInput = document.getElementById("address");
+var cityInput = document.getElementById("city");
 
-  // const settings2 = {
-  //   "async": true,
-  //   "crossDomain": true,
-  //   "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants?locationId=" + locationId,
-  //   "method": "GET",
-  //   "headers": {
-  //     "X-RapidAPI-Key": "9656de4eabmsha3cf15ece0d610dp105cabjsnc0d4301395e5",
-  //     "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
-  //   }
-  // };
-  // $.ajax(settings2).done(function (response) {
-  //   console.log(response);
-  // });
 
-    // const settings3 = {
-  //   "async": true,
-  //   "crossDomain": true,
-  //   "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/getRestaurantDetails?restaurantsId=Restaurant_Review-g60750-d2467627-Reviews-Snooze_an_A_M_Eatery-San_Diego_California",
-  //   "method": "GET",
-  //   "headers": {
-  //     "X-RapidAPI-Key": "9656de4eabmsha3cf15ece0d610dp105cabjsnc0d4301395e5",
-  //     "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
-  //   }
-  // };
-  
-  // $.ajax(settings3).done(function (response) {
-  //   console.log(response);
-  // });
+
+$("#address-button").on("click", function() {
+
+  address = addressInput.value;
+  completeAddress = address;
+  displayMap(completeAddress);
+
+  // console.log(completeAddress);
+
 });
 
-// TripAdvisor Outlines for Restaurant API
-var diningAPIkey = "130ba1a5b98741ee8dd6cc355ba285ed";
+function displayMap(location){
+  var iframe = document.querySelector("iframe");
+    // var userCity;
+    // userCity = "Paris";
+
+    // console.log(position.coords.latitude);
+    // console.log(position.coords.longitude);
+
+  
+    // console.log(iframe);
+    newSRC ="https://www.google.com/maps/embed/v1/place?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&q=" + location
+    // var newSRC = string.replace(/value=\".*\"/, "value=\"\"");
+    // var aboutFlowersNew = aboutFlowers.replace("lovely", "beautiful");
+    // iframe.add("newSRC");
+    // iframe.src.add('src', 'newSRC');
+    $(".map").attr("src",newSRC);
+    
+    console.log(iframe);
+};
+
