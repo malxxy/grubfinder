@@ -64,14 +64,14 @@
                         <div class="card-action">
                             <button id="location-button" class="#dd2c00 deep-orange accent-4 waves-effect waves-light btn-large">Use my Location</button>
                         </div>
-                        <p>Address:</p><input id ="address" class="#dd2c00 deep-orange accent-4 waves-effect waves-light w-30">
+                        <p>Looking for a food in a different city? Enter a location below.</p><input id ="address" class="#dd2c00 deep-orange accent-4 waves-effect waves-light w-30">
                         <button id="address-button" class="#dd2c00 deep-orange accent-4 waves-effect waves-light btn-large">Search Address</button>
 
 
                       </div>
                     </div>
                   </div>
-                  <div class="preloader-wrapper big active hide">
+                  <!-- <div class="spinner preloader-wrapper big active hide">
                     <div class="spinner-layer spinner-blue">
                       <div class="circle-clipper left">
                         <div class="circle"></div>
@@ -111,17 +111,11 @@
                         <div class="circle"></div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
 
                 <div class="restaurant-list-title hide"> 
                     <h2 class="white-text">Restaurants:</h2>
                 </div>
-            </section>
-
-            <section class="search hide">
-                <button id="search-btn #dd2c00 deep-orange">Search now!
-                    <span><i class="small material-icons">search</i></span>
-                </button>
             </section>
 
             <section class="filter center-align">
@@ -154,6 +148,25 @@
                     </ul>
                </div>
            </section>
+          
+           <div class="search col s12 m7">
+            <div class="card horizontal">
+              <div class="card-stacked">
+                <div class="card-content center-align">
+                  <p>Grub here we come.</p>
+                </div>
+                <div class="card-action">
+                    <button id="search-btn" class="#dd2c00 deep-orange accent-4 btn-large">SEARCH NOW!
+                      <span><i class="small material-icons">search</i></span>
+                    </button>
+                </div>
+              </div>
+            </div>
+           <!-- <section class="search">
+            <button id="search-btn #dd2c00 deep-orange">SEARCH NOW!
+                
+            </button>
+          </section> -->
 
             <section class="restaurant-list">
                     <!-- [restaurant list] -->
@@ -225,6 +238,7 @@
 
     <!-- materialize (dropdown) js link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="./assets/config.js"></script>
     <!-- JavaScript File -->
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/2ndPage.js"></script>
