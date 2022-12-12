@@ -27,18 +27,21 @@ function saveChoice() {
   $(".priceChoice").on("click", function () {
     var priceChoice = this.textContent;
     localStorage.setItem("chosenPrice", priceChoice);
+    console.log("priceChoice",priceChoice);
     populatePrice();
   });
 
   $(".cuisineChoice").on("click", function () {
     var cuisineChoice = this.textContent;
     localStorage.setItem("cuisineChoice", cuisineChoice);
+    console.log("cuisineChoice",cuisineChoice);
 		populateCuisine()
   });
 
   $(".dietChoice").on("click", function () {
     var dietChoice = this.textContent;
     localStorage.setItem("dietChoice", dietChoice);
+    console.log("dietChoice",dietChoice);
 		populateDiet()
   });
 }
@@ -213,17 +216,16 @@ fetch(`https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude
         console.log(listContainer);
         listContainer.appendChild(list);
       }
+      //displayRstrntsMap();
     })
     .catch(err => console.error(err));
 
 $(".restaurant-list").show();
 
-
-//displayRstrntsMap();
 });
 
 // function displayRstrntsMap() {
-  // var locationArray = data.array.latitude.and.longitude.of.every.restaurant
+  // if (tempData.) = data.array.latitude.and.longitude.of.every.restaurant
   // for (let index = 0; index < array.length; index++) {
   //    const element = array[index];
   //  }
