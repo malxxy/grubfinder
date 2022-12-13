@@ -27,17 +27,17 @@ THEN I am presented with a responsive layout that adapts to my viewport
 ```
 
 ## Table of Contents
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [License](#license)
-4. [Badges](#badges)
-5. [Features](#features)
-6. [Contributing](#contributing)
+1. [Installation](##installation)
+2. [Usage](##usage)
+3. [Code](##code snippets)
+4. [License](##license)
+5. [Features](##features)
+6. [Contributing](##contributing)
 
 ## Installation
 No Install Needed. You can access the webpage through the link below.
 
-https://jbxamora.github.io/deployedapp
+https://malxxy.github.io/project-01
 
 ## Usage
 To use GRUBFINDER, simply visit the website and enter your location. You will be presented with a list of restaurants near your current location. You can use the filters on the second page to narrow down your search based on cuisine type, price, and ratings. You can also click on a specific restaurants to view more detailed information, including its location, menu, hours of operation.
@@ -62,15 +62,65 @@ After selecting your preferences the application will display a list of restarau
 
 We've implemented a contact form for any questions or assistance you may need using the webpage. Simply navigate from the homepage to the HELP page using the navbar. From there fill out the form and submit it.
 
-![Picture of Contact Form](./assets/images/Contactform.png)
+![Picture of Contact Form](./assets/images/contactform.png)
 
 
 ## Code Snippets
 
+
+### Geolocation
+
+Geolocation is a useful feature to add to a restaurant finder app because it allows users to search for restaurants near their current location. This is especially helpful for people who are in a new area or city and don't know where to find good restaurants. Additionally, adding geolocation to the app can also improve the accuracy of the search results and make it easier for users to find exactly what they are looking for. By using the user's current location, the app can provide more relevant and targeted search results.
+
+```js
+$("#location-button").on("click", function() {
+
+  const successCallback = (position) => {
+    console.log(position);
+    console.log(position.coords.latitude);
+    console.log(position.coords.longitude);
+    lat = position.coords.latitude;
+    lng = position.coords.longitude;
+    getCity(lat, lng);
+  };
+  
+  const errorCallback = (error) => {
+    console.log(error);
+  };
+  
+  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+```
+
+### Local Storage
+
+Saving data to local storage is useful because it allows an app to store data on the user's device in a way that is easily accessible and persistent. 
+This is especially useful for websites that need to store user preferences. We implemented this to store user search preferences.
+
+First we collect the data
+```js
+function saveChoice() {
+  $(".priceChoice").on("click", function () {
+    var priceChoice = this.textContent;
+    localStorage.setItem("chosenPrice", priceChoice);
+    populatePrice();
+  });
+
+  saveChoice();
+```
+Then we retrieve the stored data
+
+```js
+function retrieveChoices() {
+  var price = localStorage.getItem("chosenPrice");
+  var cuisine = localStorage.getItem("cuisineChoice");
+  var diet = localStorage.getItem("dietChoice");
+
+  return [price, cuisine, diet];
+}
+```
 ### Contact Form
 
-Here is the script I used to connect my contact form to my google sheets. Once I created my Sheet, I went into the appscript extension and inputted this code. Once I deployed the app I was ready to take in contact information from readers.
-
+Through the contact form on the main page you can send useful information to the team. We implemented this using Google sheets and the following code.
 ```js
 var sheetName = 'Sheet1'
 var scriptProp = PropertiesService.getScriptProperties()
@@ -114,12 +164,6 @@ function doPost (e) {
 }
 ```
 
-### 
-
-
-
-
-
 ## License
 
 MIT License
@@ -144,21 +188,15 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## Badges
-
-
 ## Features
 
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
-9. 
-10. 
+1. Geolocation
+2. Saved preferences through 'localstorage'
+3. Implemented Google Maps
+4. API's
+5. Search
+6. Contact Form
+7. Materialize
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. If the issue goes unresolved for more than a week feel free to contact us on the GRUBFINDER website.
