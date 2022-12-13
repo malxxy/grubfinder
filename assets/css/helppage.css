@@ -1,0 +1,19 @@
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+html {
+    background-color: rgb(27, 25, 25);
+}
+
+
+
+ .input-field .prefix {
+     color: rgb(233, 144, 35);
+   }
+
+
+footer {
+
+    font-size: xx-large
+}
