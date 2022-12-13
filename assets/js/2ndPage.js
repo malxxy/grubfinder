@@ -78,12 +78,6 @@ function retrieveChoices(){
 }
 
 
-
-// // TripAdvisor Outlines for Restaurant API
-// var diningAPIkey = "130ba1a5b98741ee8dd6cc355ba285ed";
-
-
-
 // Location and Map
 
 $("#location-button").on("click", function() {
@@ -106,15 +100,10 @@ $("#location-button").on("click", function() {
 
 });
 
-
 function getCity(latitude, longitude) {
   var xhr = new XMLHttpRequest();
   var lat = latitude;
   var lng = longitude;
-  // var lat = userLatitude;
-  // var lng = userLongitude;
-  // var lat = 48.855709;
-  // var lng = 2.298890;
 
   console.log(lat,lng);
 
@@ -156,19 +145,9 @@ $("#address-button").on("click", function() {
 
 function displayMap(location){
   var iframe = document.querySelector("iframe");
-    // var userCity;
-    // userCity = "Paris";
-
-    // console.log(position.coords.latitude);
-    // console.log(position.coords.longitude);
-
   
     // console.log(iframe);
     newSRC ="https://www.google.com/maps/embed/v1/place?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&q=" + location
-    // var newSRC = string.replace(/value=\".*\"/, "value=\"\"");
-    // var aboutFlowersNew = aboutFlowers.replace("lovely", "beautiful");
-    // iframe.add("newSRC");
-    // iframe.src.add('src', 'newSRC');
     $(".map").attr("src",newSRC);
     
     console.log(iframe);

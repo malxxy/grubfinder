@@ -45,7 +45,7 @@ To use GRUBFINDER, simply visit the website and enter your location. You will be
 
 Navigate through the webpage directly from the homepage. You can go directly to the resturaunt search by clicking on the 'FIND A RESTAURANT' button. You can also use the NavBar to checkout our about section. Alternitavely if there are any issues with the website you can check out the help page and ask for assistance from a GRUBFINDER team member.
 
-![Picture of Nav bar](./assets/images/home.png)
+![Picture of Homepage](./assets/images/home.png)
 
 #### Search
 
@@ -53,14 +53,17 @@ We've made it easy to view restaurants in your area. Using geolocation data coll
 
 ![Picture of Services Tab](./assets/images/search.png)
 
+### Resturaunts Near YOU!
+After selecting your preferences the application will display a list of restaraunts in your area that match your search criteria.
+
+![Picture of lIST OF RS](./assets/images/restaurauntsnearyou.png)
+
 ### Contact Form
 
-I went down a deep rabbit hole with this project. To showcase that I've implemented a working contact form. The contact form recieves information from the website and then sends it to a google sheet I set up. This wasn't entirely my idea but it bothered me that I built a contact form that did not serve it's purpose.
+We've implemented a contact form for any questions or assistance you may need using the webpage. Simply navigate from the homepage to the HELP page using the navbar. From there fill out the form and submit it.
 
 ![Picture of Contact Form](./assets/images/Contactform.png)
 
-
-This is the most advanced feature on my webpage.
 
 ## Code Snippets
 
@@ -111,32 +114,9 @@ function doPost (e) {
 }
 ```
 
-For a more thoughrough explaination here is where I found the script:
-https://github.com/jamiewilson/form-to-google-sheets
+### 
 
-### Hover
 
-Throughout the webpage the one psuedo class I utelized the most was :hover. You can see it in use on almost all the sections of the site from the navbar to Contact Form. Here is an example of that.
-
-```css
-.work {
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-}
-
-.work img {
-    width: 100%;
-    border-radius: 10px;
-    display: block;
-    transition: transform 0.7s;
-}
-
-```
-
-Renders this:
-
-![Picture of Work](./assets/images/Redirectlinks.png)
 
 
 
