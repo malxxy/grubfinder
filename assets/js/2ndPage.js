@@ -177,11 +177,13 @@ searchBtn.on("click", function () {
 };
 
 stringLat = lat.toString();
+console.log(lat);
+
 stringLng = lng.toString();
 console.log("StringLat",stringLat);
 console.log("StringLng",stringLng);
 
-fetch(`https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=${stringLat}&longitude=${stringLng}&limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US`, options)
+fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=' + stringLat + '&longitude=' + stringLng + 'limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US', options)
     .then(response => response.json())
     .then(response => {
       console.log(response)  // the data object that returns from our fetch call
