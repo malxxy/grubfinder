@@ -1,30 +1,27 @@
 
 # GRUBFINDER
-Group 3 Project UCBFSF
+Group 3 Project 01 UCBFSF
 
 ## Description
 
-This is a portfolio I built from scratch meant to showcase skills, projects, and other experience I gain throughout the program. Throughout the README you'll see screenshots of the webpage, code snippets and you'll find a link to the deployed webpage.
-
+With Grubfinder, employees can quickly search for restaurants in the area, filter results by cuisine type, diet, price, and ratings, and view information about each restaurant, including its location, menu, and hours of operation. They can also read reviews from other users and see photos of the restaurant and its dishes. This will save us time and hassle, and help our employees find great restaurants for lunch that they will enjoy.
 ### User Story
 ```
-AS AN employer
-I WANT to view a potential employee's deployed portfolio of work samples
-SO THAT I can review samples of their work and assess whether they're a good candidate for an open position
+AS a busy professional,
+I WANT to be able to quickly and easily find a good restauraunt for lunch near my office
+SO THAT I can find the perfect place to eat.
+I WANT to be able to filter my results by cuisine type, price, and ratings
+SO THAT I can find restaurants that meet my preference.
 ```
 ### Acceptance Criteria
 ```
-GIVEN I need to sample a potential employee's previous work
-WHEN I load their portfolio
-THEN I am presented with the developer's name, a recent photo or avatar, and links to sections about them, their work, and how to contact them
-WHEN I click one of the links in the navigation
-THEN the UI scrolls to the corresponding section
-WHEN I click on the link to the section about their work
-THEN the UI scrolls to a section with titled images of the developer's applications
-WHEN I am presented with the developer's first application
-THEN that application's image should be larger in size than the others
-WHEN I click on the images of the applications
-THEN I am taken to that deployed application
+GIVEN that I am a busy proffessional looking for lunch near my office
+WHEN I go to the GRUBFINDER website and enter my location
+THEN I am presented with a list of restaurants near my office.
+WHEN I click on a specific restaurant from the list
+THEN I am presented with detailed information about the restaurant, including its location,menu, and hours of operation
+WHEN I filter the results by cuisine type/diet, price, and ratings
+THEN I should be presented with a list of restaraunts that match my preferences
 WHEN I resize the page or view the site on various screens and devices
 THEN I am presented with a responsive layout that adapts to my viewport
 ```
@@ -43,37 +40,18 @@ No Install Needed. You can access the webpage through the link below.
 https://jbxamora.github.io/deployedapp
 
 ## Usage
+To use GRUBFINDER, simply visit the website and enter your location. You will be presented with a list of restaurants near your current location. You can use the filters on the second page to narrow down your search based on cuisine type, price, and ratings. You can also click on a specific restaurants to view more detailed information, including its location, menu, hours of operation.
+#### Homepage
 
-This will be my main source of content throughout the course. Here are some things I added to my webpage to make it more accessible to readers.
-### Accessability
-I've added a @media querey to make the webpage accessable to all readers on all devices.
-The media screen removes the nav bar and adds a menu bar when the screen is smaller than 600px. This allows the same user experience for both desktop and mobile users.
+Navigate through the webpage directly from the homepage. You can go directly to the resturaunt search by clicking on the 'FIND A RESTAURANT' button. You can also use the NavBar to checkout our about section. Alternitavely if there are any issues with the website you can check out the help page and ask for assistance from a GRUBFINDER team member.
 
-![Picture of Menu Bar on Mobile Device](./assets/images/mobilemenu.png)
-#### NavBar 
+![Picture of Nav bar](./assets/images/home.png)
 
-A NavBar Implemented into the website so that users are able to quickly jump from section to section.
+#### Search
 
-![Picture of Nav bar](./assets/images/Navbar.png)
+We've made it easy to view restaurants in your area. Using geolocation data collected from your system we can display a list of restaraunts in your area. Alternitavely you can search from an address, city , or state. Its up to you to search where you want!
 
-#### Working Links
-
-Ive added icons In the 'Portolio' Section of the webpage so you can view different projects and be redirected to the deployed sites. All you need to do is click.
-
-![Picture of Redirect Link](./assets/images/Redirectlinks.png)
-
-#### Comments
-For those that are looking to inspect the inside of a webpage, I've added comments so you know where you are in the mass of CSS and HTML.
-
-![HTML Comments](./assets/images/Comments.png)
-
-### User Experience
-
-#### Colors
-
-I've added different colors to capture the attention of readers and a black background for a nice contrast. I beleive this makes the webpage more visually appealing and easier to read.
-
-![Picture of Services Tab](./assets/images/USEREX.png)
+![Picture of Services Tab](./assets/images/search.png)
 
 ### Contact Form
 
@@ -160,23 +138,7 @@ Renders this:
 
 ![Picture of Work](./assets/images/Redirectlinks.png)
 
-### Icons
 
-I felt my webpage was a little lacking so I went in search of something that would spice it up. ICONS! Throughout the site you can see icons i've placed. There is a two step process to implementing Icons to your work.
-
-1. Enable the script to allow icons from a third party app/wepsite. For this I used https://fontawesome.com/icons This webpage gives you a peice of code to input into your HTML when you want to insert an icon.
-
-```js
- <script src="https://kit.fontawesome.com/ac5909b33d.js" crossorigin="anonymous" alt="Icons"></script>
-```
-
-```html
- <i class="fa-solid fa-rocket"></i>
-```
-
-After adding some style to them they render like this:
-
-![Picture of Icons](./assets/images/Screen%20Shot%202022-10-25%20at%2012.04.00%20AM.png)
 
 ## License
 
@@ -204,27 +166,20 @@ SOFTWARE.
 
 ## Badges
 
-<a href=”https://www.linkedin.com/in/jorge-zamora-786945250/”>
-<img src='https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&labelColor=blue'>
-
-![badmath](https://img.shields.io/github/followers/jbxamora?label=JBXAMORA&logoColor=%23fd2423&style=social)
-
-![badmath](https://img.shields.io/github/license/jbxamora/code-refactor)
 
 ## Features
 
-1. HTML
-2. CSS
-3. GitHub
-4. LiveSite
-5. Accessability
-6. Hover 
-7. Comments
-8.Contact Form
-9.Media Query
-10.High Fidelity Wireframe
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
 
 ## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. If the issue goes unresolved for more than a week feel free to contact me at any of the links listed below. Be sure to add me on LinkedIn and Follow me on GitHub to view my course progression. You can also visit the deployed site and sent a messafe through the contact form.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. If the issue goes unresolved for more than a week feel free to contact us on the GRUBFINDER website.
 
