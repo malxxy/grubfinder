@@ -28,7 +28,7 @@
     <header class="#ff5722 deep-orange">
         <nav>
             <div class="banner-div nav-wrapper #ff5722 deep-orange">
-            <a class="brand-logo center #ff5722 deep-orange">GRUBFINDER</a>
+            <a class="brand-logo center #ff5722 deep-orange">About GrubFinder</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li class="#ff5722 deep-orange"><a href="index.html">HOME</a></li>
                 <li class="#ff5722 deep-orange"><a href="aboutPage.html">ABOUT</a></li>
@@ -40,142 +40,28 @@
     
     <main class="container">
         <section class="home valign-wrapper">
-            <div class="home-text center-align valign">
-                <h2>Looking to Grub?</h2>
-                <h3>Search restaurants by location, cuisine, and dietary preferences.</h3>
-                <button id="start-btn" class="#dd2c00 deep-orange accent-4 waves-effect waves-light btn-large pulse"><i class="material-icons right">local_dining</i></a>Find A Restaurant</button>
-            </div>
             
             <div>
-                <video src="./assets/images/homeVid.mp4" class="valign-wrapper" id="home-video" autoplay loop muted type="video/mp4"></video>
+                <img src="./assets/images/aboutPageImg.jpg" alt="placeholder image"/> 
+            </div>
+            <div>
+                <p class="#ff5722">GrubFinder was founded by four classmates who were always on the hunt for their favorite type of foods.</p>
+                <p>We created this food finder for those who were also on that same mission; whether you are looking for a specific type of:</p> 
+                <ul>-Cuisine</ul> 
+                <ul>-Dietary Preference</ul>
+                <ul>-Pricing</ul> 
+                    <p>GrubFinder provides the means of searching for these eateries in a location near you with a few simple clicks!</p>
+                    <p>Simply use your location or feel free to type in an address to display on the map the variety of different options!</p>
             </div>
         </section>
-        
-        <section class="content">
-            <section>
-                <div class="col s12 m7">
-                    <div class="card horizontal">
-                      <div class="card-stacked">
-                        <div class="card-content center-align">
-                          <p>Find the food you're craving. Allow the browser to use your location to get started.</p>
-                        </div>
-                        <div class="card-action">
-                            <button id="location-button" class="#dd2c00 deep-orange accent-4 waves-effect waves-light btn-large">Use my Location</button>
-                        </div>
-                        <p>Looking for a food in a different city? Enter a location below.</p><input id ="address" class="#dd2c00 deep-orange accent-4 waves-effect waves-light w-30">
-                        <button id="address-button" class="#dd2c00 deep-orange accent-4 waves-effect waves-light btn-large">Search Address</button>
-
-
-                      </div>
-                    </div>
-                  </div>
-
-                <div class="restaurant-list-title hide"> 
-                    <h2 class="white-text">Restaurants:</h2>
-                </div>
-            </section>
-
-            <section class="filter center-align">
-                <div data-target="dropdown" class="dropContainer">
-                   <a class='dropdown-trigger btn #ff5722 deep-orange' href='#' data-target='dropdown'>Price<i class="material-icons right">arrow_drop_down</i></a>
-                   <ul class="dropdown-content" id="dropdown">
-                       <li><a href="#" class="priceChoice">$</a></li>
-                       <li><a href="#" class="priceChoice">$$</a></li>
-                       <li><a href="#" class="priceChoice">$$$</a></li>
-                       <li><a href="#" class="priceChoice">$$$$</a></li>
-                   </ul>
-               </div>
-               <div data-target="dropdownTwo" class="dropContainer">
-                   <a class='dropdown-trigger btn #ff5722 deep-orange' href='#' data-target='dropdownTwo'>Cuisine<i class="material-icons right">arrow_drop_down</i></a>
-                   <ul class="dropdown-content" id="dropdownTwo">
-                       <li><a href="#" class="cuisineChoice">Italian</a></li>
-                       <li><a href="#" class="cuisineChoice">Japanese</a></li>
-                       <li><a href="#" class="cuisineChoice">Mexican</a></li>
-                       <li><a href="#" class="cuisineChoice">American</a></li>
-                       <li><a href="#" class="cuisineChoice">Indian</a></li>
-                   </ul>
-               </div>
-               <div data-target="dropdownThree" class="dropContainer">
-                    <a class='dropdown-trigger btn #ff5722 deep-orange' href='#' data-target='dropdownThree'>Dietary Preference<i class="material-icons right">arrow_drop_down</i></a>
-                    <ul class="dropdown-content" id="dropdownThree">
-                       <li><a href="#" class="dietChoice">Vegetarian</a></li>
-                       <li><a href="#" class="dietChoice">Vegan</a></li>
-                       <li><a href="#" class="dietChoice">Paleo</a></li>
-                       <li><a href="#" class="dietChoice">Gluten Free</a></li>
-                    </ul>
-               </div>
-           </section>
-          
-           <div class="search col s12 m7">
-            <div class="card horizontal">
-              <div class="card-stacked">
-                <div class="card-content center-align">
-                  <p>Grub here we come.</p>
-                </div>
-                <div class="card-action">
-                    <button id="search-btn" class="#dd2c00 deep-orange accent-4 btn-large">SEARCH NOW!
-                      <span><i class="small material-icons">search</i></span>
-                    </button>
-                </div>
-              </div>
-            </div>
-
-
-            <section class="restaurant-list">
-              <h2 class="#fbe9e7 deep-orange-text lighten-5">Restaurants Near You</h2>
-              <div id="enter-restaurants"></div>
-                    <!-- [restaurant list] -->
-            </section>
-
-            <iframe
-              class="map"
-              width="1400"
-              height="1000"
-              style="border:0"
-              loading="lazy"
-              allowfullscreen
-              referrerpolicy="no-referrer-when-downgrade"
-              src=''
-              >
-            </iframe>
-
-        </section>
-
-      </main>       
+    
+    </main>       
     
     <footer class="#ff5722 deep-orange">
     </footer>
 
-    <!--JavaScript jQuery-->
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-
-    <!-- materialize (dropdown) js link -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text/javascript" src="./assets/js/config.js"></script>
     <!-- JavaScript File -->
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/2ndPage.js"></script>
 </body>
 </html>
-
-
-<body>
-    <div class="banner-div nav-wrapper #ff5722 deep-orange">
-        <a class="brand-logo center #ff5722 deep-orange">About GrubFinder</a>
-    <div>
-    <header><p>GrubFinder was founded by four classmates who were always on the hunt for their favorite type of foods.</p>
-        <img src="./assets/images/aboutPageImg.jpg" alt="placeholder image"/> 
-    </header>
-    <div><p>We created this food finder for those who were also on that same mission; whether you are looking for a specific type of:</p> 
-        <ul>-Cuisine</ul> 
-        <ul>-Dietary Preference</ul>
-        <ul>-Pricing</ul> 
-            <p>GrubFinder provides the means of searching for these eateries in a location near you with a few simple clicks!</p>
-            <p>Simply use your location or feel free to type in an address to display on the map the variety of different options!</p>
-    </div>
-
-    <!-- materialize (dropdown) js link -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</body>
