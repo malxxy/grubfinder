@@ -201,9 +201,6 @@ fetch(`https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude
     })
     .catch(err => console.error(err));
 
-    console.log(`https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=${stringLat}&longitude=${stringLng}&limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US`);
-
-
 $(".restaurant-list").show();
 
 
