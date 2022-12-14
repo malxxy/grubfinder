@@ -104,6 +104,7 @@ $("#location-button").on("click", function() {
   
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
+  $("#enter-restaurants").empty();
 
 });
 
@@ -147,16 +148,12 @@ $("#address-button").on("click", function() {
 
   // console.log(completeAddress);
 
+  $("#enter-restaurants").empty();
+
 });
 
 function displayMap(location){
   var iframe = document.querySelector("iframe");
-    // var userCity;
-    // userCity = "Paris";
-
-    // console.log(position.coords.latitude);
-    // console.log(position.coords.longitude);
-
   
     // console.log(iframe);
     newSRC ="https://www.google.com/maps/embed/v1/place?key=AIzaSyDYlUewisG8_siVWsKxGOQCWkWmlHEKl-0&q=" + location
@@ -203,6 +200,9 @@ fetch(`https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude
       //displayRstrntsMap();
     })
     .catch(err => console.error(err));
+
+    console.log(`https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=${stringLat}&longitude=${stringLng}&limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US`);
+
 
 $(".restaurant-list").show();
 
