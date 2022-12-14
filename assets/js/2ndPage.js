@@ -104,6 +104,7 @@ $("#location-button").on("click", function() {
   
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
+  $("#enter-restaurants").empty();
 
 });
 
@@ -114,7 +115,6 @@ function getCity(latitude, longitude) {
 
   console.log(lat,lng);
 
-  // Paste your LocationIQ token below.
   xhr.open('GET', "https://us1.locationiq.com/v1/reverse.php?key=pk.5e9b4412affb8f01f877f95ad3832750&lat=" +
   lat + "&lon=" + lng + "&format=json", true);
   xhr.send();
@@ -147,6 +147,8 @@ $("#address-button").on("click", function() {
   displayMap(completeAddress);
 
   // console.log(completeAddress);
+
+  $("#enter-restaurants").empty();
 
 });
 
