@@ -1,196 +1,195 @@
 /* Root
-
 /* Universal Selector */
 * {
-     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    background-color: black;
+   display: flex;
+   flex-direction: column;
+   background-color: black;
 }
-  
+ 
 header {
-    display: flex;
-    padding: 1%;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 15px;
+   display: flex;
+   padding: 1%;
+   justify-content: space-between;
+   align-items: center;
+   border-radius: 15px;
 }
-  
+ 
 h1 {
-    font-size: 200%;
-    color: #ff5722 deep-orange;
+   font-size: 200%;
+   color: #ff5722 deep-orange;
 }
 
 h2 {
-    font-size: 48px;
+   font-size: 48px;
 }
 
 h3 {
-    font-size: 36px;
+   font-size: 36px;
 }
-  
+ 
 nav ul {
-    display: flex;
-    min-width: 180px;
-    list-style: none;
-    justify-content: space-between;
-    color: #ff5722 deep-orange;
+   display: flex;
+   min-width: 180px;
+   list-style: none;
+   justify-content: space-between;
+   color: #ff5722 deep-orange;
 }
-  
+ 
 nav a {
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    position: relative;
+   color: white;
+   font-size: 18px;
+   font-weight: bold;
+   text-decoration: none;
+   position: relative;
 }
 
 .banner-div {
-    border-radius: 15px;
+   border-radius: 15px;
 }
 
 main {
-    display: flex;
-    flex: 1 1 0;
-    margin: 2% auto;
-    width: 95%;
-    justify-content: space-between;
+   display: flex;
+   flex: 1 1 0;
+   margin: 2% auto;
+   width: 95%;
+   justify-content: space-between;
 }
 
 .filter {
-    display: flex;
-    flex-direction: row;
-    color: #fff;
+   display: flex;
+   flex-direction: row;
+   color: #fff;
 }
 
 .content{
-    flex: 1 0 0;
-    flex-direction: row;
-    text-align: center;
+   flex: 1 0 0;
+   flex-direction: row;
+   text-align: center;
 }
 
 .container {
-    display:block;
+   display:block;
 }
 
 .home {
-    position: relative;
-    padding: 20px;
+   position: relative;
+   padding: 20px;
 }
 
 video {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
+   max-width: 100%;
+   height: auto;
+   border-radius: 15px;
 }
 
 .home-video {
-    position:relative;
-    z-index:0;
-    overflow: hidden;
-    height: auto;
-    width: 100%;
+   position:relative;
+   z-index:0;
+   overflow: hidden;
+   height: auto;
+   width: 100%;
 }
 
 .home-text {
-    position:absolute;
-    margin-left: auto;
-    margin-right: auto;
-    top:10%;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    text-align:center;
-    background-color: white;
-    opacity: 80%;
-    border-radius: 20px;
-    padding: 0px 10px;
-    width: 50%;
-    line-height: 200px;
+   position:absolute;
+   margin-left: auto;
+   margin-right: auto;
+   top:10%;
+   left: 0;
+   right: 0;
+   z-index: 1;
+   text-align:center;
+   background-color: white;
+   opacity: 80%;
+   border-radius: 20px;
+   padding: 0px 10px;
+   width: 50%;
+   line-height: 200px;
 }
 
 .temp{
-    text-align: center;
-    color: white;
+   text-align: center;
+   color: white;
 }
 
 .mapcontainer {
-    position: relative;
+   position: relative;
 }
 
 #map{
-    position: absolute;
-    left: 10%;
-    border-style: solid;
-    border-width: 5px;
-    border-radius: 15px;
-    border: rgb(27, 114, 132) solid;
-    height: 600px;
-    width: 85%;
-  }
+   position: absolute;
+   left: 10%;
+   border-style: solid;
+   border-width: 5px;
+   border-radius: 15px;
+   border: rgb(27, 114, 132) solid;
+   height: 600px;
+   width: 85%;
+ }
 
 #map img {
-    opacity: 0%;
-    z-index: 0;
+   opacity: 0%;
+   z-index: 0;
 }
 
 footer {
-   display: inline-block;
-   position: fixed;
-   text-align: center;
-   justify-content: center;
-   border-radius: 15px;
-   bottom: 0;
-   width: 100%;
-   height: 60px;    
-   color: #fff;
+  display: inline-block;
+  position: fixed;
+  text-align: center;
+  justify-content: center;
+  border-radius: 15px;
+  bottom: 0;
+  width: 100%;
+  height: 60px;    
+  color: #fff;
 }
 
 /* #map { height: 360px; } */
 #map {
-    height: 100%;
+   height: 100%;
 }
-  
+ 
 
 html,
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+   height: 100%;
+   margin: 0;
+   padding: 0;
 }
 
 #address,
 #city{
-    width: 50%;
+   width: 50%;
 }
 
 #enter-restaurants {
-    color:#ff5722;
-    background-color: #fbe9e7;
-    padding: 10px;
-    text-align: left;
-    margin: 10px;
-    list-style-type: square;
+   color:#ff5722;
+   background-color: #fbe9e7;
+   padding: 10px;
+   text-align: left;
+   margin: 10px;
+   list-style-type: square;
 }
 
 #aboutPageImage{
-    margin-right: 20px;
-    margin-left: -50px;
+   margin-right: 20px;
+   margin-left: -50px;
 }
 
 #aboutPageText{
-    color: white;
+   color: white;
 }
 
 @media screen and (max-width: 768px) {
-    header {
-      flex-direction: column;
-      text-align: center;
-    }
-    main {
-        flex-direction: column;
-    }
-  }
+   header {
+     flex-direction: column;
+     text-align: center;
+   }
+   main {
+       flex-direction: column;
+   }
+ }
