@@ -1,16 +1,21 @@
 var priceChoice = document.querySelectorAll(".priceChoice");
 var cuisineChoice = document.querySelectorAll(".cuisineChoice");
 var dietChoice = document.querySelectorAll(".dietChoice");
+var listContainer = document.getElementById("enter-restaurants");
 var searchBtn = $("#search-btn");
 var userCity = "";
 var lat = NaN;
 var lng = NaN;
 console.log(priceChoice);
 
+// Bring in our API Key
+var rapid_API_ke;
+
 // Dropdown call
 $('.dropdown-trigger').dropdown();
 $('.filter').hide();
 $('.search').hide();
+$('.restaurant-list').hide();
 
 $("select").formSelect({
   dropdownOptions: {
@@ -22,18 +27,21 @@ function saveChoice() {
   $(".priceChoice").on("click", function () {
     var priceChoice = this.textContent;
     localStorage.setItem("chosenPrice", priceChoice);
+    console.log("priceChoice",priceChoice);
     populatePrice();
   });
 
   $(".cuisineChoice").on("click", function () {
     var cuisineChoice = this.textContent;
     localStorage.setItem("cuisineChoice", cuisineChoice);
+    console.log("cuisineChoice",cuisineChoice);
 		populateCuisine()
   });
 
   $(".dietChoice").on("click", function () {
     var dietChoice = this.textContent;
     localStorage.setItem("dietChoice", dietChoice);
+    console.log("dietChoice",dietChoice);
 		populateDiet()
   });
 }
@@ -77,12 +85,6 @@ function retrieveChoices(){
 }
 
 
-
-// // TripAdvisor Outlines for Restaurant API
-// var diningAPIkey = "130ba1a5b98741ee8dd6cc355ba285ed";
-
-
-
 // Location and Map
 
 $("#location-button").on("click", function() {
@@ -104,7 +106,6 @@ $("#location-button").on("click", function() {
 
 
 });
-
 
 function getCity(latitude, longitude) {
   var xhr = new XMLHttpRequest();
@@ -150,14 +151,15 @@ $("#address-button").on("click", function() {
 
 function displayMap(location){
   var iframe = document.querySelector("iframe");
+    // var userCity;
+    // userCity = "Paris";
 
     // console.log(position.coords.latitude);
     // console.log(position.coords.longitude);
 
   
     // console.log(iframe);
-    newSRC ="https://www.google.com/maps/embed/v1/place?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&q=" + location
-
+    newSRC ="https://www.google.com/maps/embed/v1/place?key=AIzaSyDYlUewisG8_siVWsKxGOQCWkWmlHEKl-0&q=" + location
     $(".map").attr("src",newSRC);
     
     console.log(iframe);
@@ -178,12 +180,38 @@ searchBtn.on("click", function () {
         'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
     }
 };
+
 stringLat = lat.toString();
 stringLng = lng.toString();
 console.log("StringLat",stringLat);
 console.log("StringLng",stringLng);
-fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=' + stringLat + '&longitude=' + stringLng + 'limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US', options)
+
+fetch(`https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=${stringLat}&longitude=${stringLng}&limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US`, options)
     .then(response => response.json())
-    .then(response => console.log(response))
+    .then(response => {
+      console.log(response)  // the data object that returns from our fetch call
+      let tempData = response.data;
+      console.log(tempData);
+      for (let index = 0; index < tempData.length; index++) {
+       // console.log(tempData[index].name)
+        var list = document.createElement('ul');
+        list.textContent = tempData[index].name;
+        console.log(list);
+        console.log(listContainer);
+        listContainer.appendChild(list);
+      }
+      //displayRstrntsMap();
+    })
     .catch(err => console.error(err));
+
+$(".restaurant-list").show();
+
+
 });
+
+// function displayRstrntsMap() {
+  // if (tempData.) = data.array.latitude.and.longitude.of.every.restaurant
+  // for (let index = 0; index < array.length; index++) {
+  //    const element = array[index];
+  //  }
+//};
