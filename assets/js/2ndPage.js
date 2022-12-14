@@ -144,12 +144,23 @@ $("#address-button").on("click", function() {
 
   address = addressInput.value;
   completeAddress = address;
+
+  // console.log(completeAddress);
   displayMap(completeAddress);
 
   // console.log(completeAddress);
 
+
   $("#enter-restaurants").empty();
 
+  fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + completeAddress + '&key=AIzaSyDYlUewisG8_siVWsKxGOQCWkWmlHEKl-0&q=')
+    
+  .then(response => response.json())
+  .then(response => {
+    console.log(response)
+  })
+  .catch(err => console.error(err));
+    
 });
 
 function displayMap(location){
