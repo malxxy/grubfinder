@@ -161,8 +161,8 @@ $("#address-button").on("click", function() {
   .then(response => {
     console.log("Address Response",response)
     let locationData = response.data;
-    stringLat = locationData[0].geometry.location.lat.toString();
-    stringLng= locationData[0].geometry.location.lng.toString();
+    stringLat = locationData.results[0].geometry.location.lat.toString();
+    stringLng= locationData.results[0].geometry.location.lng.toString();
   })
   .catch(err => console.error(err));
     
