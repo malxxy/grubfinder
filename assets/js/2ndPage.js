@@ -7,9 +7,11 @@ var userCity = "";
 var lat = NaN;
 var lng = NaN;
 console.log(priceChoice);
+var stringLat = "";
+var StringLng = "";
 
 // Bring in our API Key
-var rapid_API_ke;
+var rapid_API_key;
 
 // Dropdown call
 $('.dropdown-trigger').dropdown();
@@ -133,12 +135,15 @@ function getCity(latitude, longitude) {
           return;
       }
   }
-};
 
+  stringLat = lat.toString();
+  stringLng = lng.toString();
+  console.log("StringLat",stringLat);
+  console.log("StringLng",stringLng);
+};
 
 var addressInput = document.getElementById("address");
 var cityInput = document.getElementById("city");
-
 
 $("#address-button").on("click", function() {
 
@@ -148,16 +153,16 @@ $("#address-button").on("click", function() {
   // console.log(completeAddress);
   displayMap(completeAddress);
 
-  // console.log(completeAddress);
-
-
   $("#enter-restaurants").empty();
 
   fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + completeAddress + '&key=AIzaSyDYlUewisG8_siVWsKxGOQCWkWmlHEKl-0&q=')
     
   .then(response => response.json())
   .then(response => {
-    console.log(response)
+    console.log("Address Response",response)
+    let locationData = response.data;
+    stringLat = locationData.results[0].geometry.location.lat.toString();
+    stringLng= locationData.results[0].geometry.location.lng.toString();
   })
   .catch(err => console.error(err));
     
@@ -188,11 +193,6 @@ searchBtn.on("click", function () {
         'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
     }
 };
-
-stringLat = lat.toString();
-stringLng = lng.toString();
-console.log("StringLat",stringLat);
-console.log("StringLng",stringLng);
 
 fetch(`https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=${stringLat}&longitude=${stringLng}&limit=30&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US`, options)
     .then(response => response.json())

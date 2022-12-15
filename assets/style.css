@@ -63,6 +63,7 @@ main {
    display: flex;
    flex-direction: row;
    color: #fff;
+   justify-content: center;
 }
 
 .content{
