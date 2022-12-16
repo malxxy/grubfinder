@@ -160,7 +160,7 @@ $("#address-button").on("click", function() {
   .then(response => response.json())
   .then(response => {
     console.log("Address Response",response)
-    let locationData = response.data;
+    let locationData = response;
     stringLat = locationData.results[0].geometry.location.lat.toString();
     stringLng= locationData.results[0].geometry.location.lng.toString();
   })
